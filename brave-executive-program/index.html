@@ -5,8 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Brave Executive Program | Janeiro 2026</title>
-    <meta name="description" content="Formação Executiva Presencial. Transforme Faturamento em Caixa, Lucro e Capital de Giro. Método validado em +5.000 empresas.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description"
+        content="Formação Executiva Presencial. Transforme Faturamento em Caixa, Lucro e Capital de Giro. Método validado em +5.000 empresas.">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <style>
         /* ===== CSS Variables - BRAVE DESIGN SYSTEM ===== */
         :root {
@@ -65,7 +68,9 @@
         }
 
         /* ===== Reset ===== */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -97,6 +102,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -104,8 +110,13 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         .animate-on-scroll {
@@ -119,10 +130,21 @@
             transform: translateY(0);
         }
 
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
-        .delay-4 { transition-delay: 0.4s; }
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .delay-4 {
+            transition-delay: 0.4s;
+        }
 
         /* ===== HERO SECTION - MINIMAL + CARD FOTO (Inter) ===== */
         .hero {
@@ -171,7 +193,7 @@
         .hero-subtitle {
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             margin-bottom: 2.5rem;
             line-height: 1.7;
         }
@@ -199,7 +221,7 @@
             margin-top: 1.5rem;
             font-family: 'Inter', sans-serif;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255, 255, 255, 0.4);
         }
 
         /* Photo Card */
@@ -216,7 +238,7 @@
             object-fit: cover;
             object-position: center top;
             border-radius: 8px;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
         }
 
         .hero-photo-card .name-tag {
@@ -240,7 +262,7 @@
 
         .hero-photo-card .name-tag span {
             font-size: 0.65rem;
-            color: rgba(0,0,0,0.6);
+            color: rgba(0, 0, 0, 0.6);
             text-transform: uppercase;
             letter-spacing: 0.1em;
         }
@@ -251,14 +273,17 @@
                 padding: 4rem 2rem;
                 text-align: center;
             }
+
             .hero-content {
                 max-width: 100%;
             }
+
             .hero-photo-card {
                 flex: none;
                 width: 100%;
                 max-width: 350px;
             }
+
             .hero-photo-card img {
                 height: 400px;
             }
@@ -329,7 +354,7 @@
             border-radius: 0.5rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         .qual-card:hover {
@@ -401,16 +426,16 @@
         }
 
         .pilar-card {
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
             padding: 2.5rem 2rem;
             position: relative;
             border-radius: 0.5rem;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
             transition: all 0.3s ease;
         }
 
         .pilar-card:hover {
-            background: rgba(255,255,255,0.07);
+            background: rgba(255, 255, 255, 0.07);
             transform: translateY(-2px);
         }
 
@@ -444,7 +469,7 @@
 
         .pilar-list {
             list-style: none;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 1.25rem;
         }
 
@@ -528,7 +553,7 @@
             background: var(--bg-white);
             border-radius: 0.5rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0,0,0,0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             position: relative;
             z-index: 2;
             transition: all 0.3s ease;
@@ -617,7 +642,7 @@
             background: var(--bg-white);
             border-radius: 0.5rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0,0,0,0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             text-align: left;
             transition: all 0.3s ease;
         }
@@ -670,7 +695,7 @@
 
         .faq-item {
             background: var(--bg-white);
-            border: 1px solid rgba(0,0,0,0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 0.5rem;
             margin-bottom: 0.75rem;
             overflow: hidden;
@@ -794,9 +819,9 @@
         .urgencia-item {
             text-align: center;
             padding: 2rem;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 0.5rem;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .urgencia-number {
@@ -868,8 +893,8 @@
         }
 
         .bento-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 0.5rem;
             padding: 2rem;
             display: flex;
@@ -904,7 +929,7 @@
         .bento-card .bento-value {
             margin-top: 1rem;
             padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-family: 'Inter', sans-serif;
             font-size: 1.25rem;
             font-weight: 700;
@@ -1000,7 +1025,7 @@
         .cta-footer {
             margin-top: 2.5rem;
             padding-top: 2.5rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .cta-footer p {
@@ -1107,8 +1132,8 @@
         }
 
         .triplo-card {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 0.5rem;
             padding: 2.5rem 2rem;
             text-align: center;
@@ -1116,7 +1141,7 @@
         }
 
         .triplo-card:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             transform: translateY(-4px);
         }
 
@@ -1200,7 +1225,7 @@
 
         .accordion-item {
             background: #fff;
-            border: 1px solid rgba(0,0,0,0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 0.5rem;
             padding: 1.25rem 1.5rem;
             transition: all 0.3s ease;
@@ -1269,7 +1294,7 @@
         .fundador-foto img {
             width: 100%;
             border-radius: 0.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .fundador-content h2 {
@@ -1302,7 +1327,7 @@
             padding: 1.5rem;
             background: var(--bg-white);
             border-radius: 0.5rem;
-            border: 1px solid rgba(0,0,0,0.08);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             margin-bottom: 2rem;
         }
 
@@ -1369,7 +1394,7 @@
             left: 0;
             right: 0;
             padding: 2rem;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
             color: #fff;
         }
 
@@ -1390,8 +1415,8 @@
         .carousel-arrow {
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -1420,7 +1445,7 @@
             width: 10px;
             height: 10px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.3);
             cursor: pointer;
             transition: all 0.3s;
             border: none;
@@ -1472,14 +1497,14 @@
             align-items: center;
             gap: 1rem;
             padding: 1.25rem 1.5rem;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 0.5rem;
             transition: all 0.3s ease;
         }
 
         .qa-answer:hover {
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
         }
 
         .qa-answer.selected {
@@ -1494,7 +1519,7 @@
         .qa-radio {
             width: 24px;
             height: 24px;
-            border: 2px solid rgba(255,255,255,0.3);
+            border: 2px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             flex-shrink: 0;
             display: flex;
@@ -1586,7 +1611,7 @@
             max-width: 700px;
             margin: 2.5rem auto 0;
             padding: 2rem;
-            background: rgba(255,255,255,0.03);
+            background: rgba(255, 255, 255, 0.03);
             border-radius: 0.5rem;
             text-align: center;
         }
@@ -1636,7 +1661,7 @@
             margin-bottom: 1rem;
         }
 
-        .resumo-left > p {
+        .resumo-left>p {
             opacity: 0.8;
             margin-bottom: 2rem;
             line-height: 1.6;
@@ -1647,7 +1672,7 @@
             align-items: center;
             gap: 1rem;
             padding: 1rem;
-            background: rgba(0,0,0,0.1);
+            background: rgba(0, 0, 0, 0.1);
             border-radius: 0.5rem;
             margin-bottom: 1rem;
         }
@@ -1689,7 +1714,7 @@
             gap: 0.75rem;
             margin-bottom: 1rem;
             padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .resumo-item:last-child {
@@ -1711,7 +1736,7 @@
 
         .resumo-item small {
             display: block;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.8rem;
             margin-top: 0.25rem;
         }
@@ -1742,7 +1767,7 @@
             text-align: center;
             margin-top: 1rem;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         /* === VERSÃO MOBILE: Pricing Table (Opção 7) === */
@@ -1794,7 +1819,7 @@
             align-items: flex-start;
             gap: 0.75rem;
             padding: 0.75rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .resumo-pricing-item:last-child {
@@ -1813,13 +1838,13 @@
 
         .resumo-pricing-item small {
             display: block;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
             font-size: 0.8rem;
             margin-top: 0.25rem;
         }
 
         .resumo-pricing-bonus {
-            background: rgba(234,202,45,0.1);
+            background: rgba(234, 202, 45, 0.1);
             border-radius: 0.5rem;
             padding: 1rem;
             margin-bottom: 1.5rem;
@@ -1879,7 +1904,7 @@
             text-align: center;
             margin-top: 1rem;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255, 255, 255, 0.5);
         }
 
         /* === RESPONSIVO: Troca de layout === */
@@ -1887,6 +1912,7 @@
             .resumo-split {
                 display: none;
             }
+
             .resumo-pricing {
                 display: block;
             }
@@ -1901,7 +1927,8 @@
         <div class="hero-content">
             <span class="hero-label">Brave Executive Program</span>
             <h1 class="hero-title">Transforme Faturamento em <span>Caixa, Lucro e Capital de Giro</span></h1>
-            <p class="hero-subtitle">Para donos de empresa que sabem que o próximo nível exige método, visão e decisão.</p>
+            <p class="hero-subtitle">Para donos de empresa que sabem que o próximo nível exige método, visão e decisão.
+            </p>
             <a href="#aplicar" class="hero-cta">Solicitar Informações</a>
             <p class="hero-note">Turma Janeiro 2026 · São Paulo</p>
         </div>
@@ -1919,8 +1946,10 @@
     <section class="triplo-papel">
         <div class="container">
             <header class="section-header animate-on-scroll">
-                <h2 class="section-title section-title--dark">Hoje, não dá mais para ser <span style="color: var(--accent-gold);">só CEO</span></h2>
-                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Você precisa dominar 3 papéis para crescer com controle</p>
+                <h2 class="section-title section-title--dark">Hoje, não dá mais para ser <span
+                        style="color: var(--accent-gold);">só DONO</span></h2>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Você precisa dominar 3 papéis para
+                    crescer com controle</p>
             </header>
 
             <div class="triplo-grid">
@@ -1953,21 +1982,25 @@
             <header class="section-header animate-on-scroll">
                 <span class="section-label">Antes de continuar</span>
                 <h2 class="section-title">Reconhece esse cenário?</h2>
-                <p class="section-subtitle">Se você se identifica com pelo menos dois desses pontos, esse programa foi feito para você.</p>
+                <p class="section-subtitle">Se você se identifica com pelo menos dois desses pontos, esse programa foi
+                    feito para você.</p>
             </header>
 
             <div class="qualificacao-grid">
                 <article class="qual-card animate-on-scroll delay-1">
                     <h3 class="qual-title">Fatura R$ 100K+ mas o caixa não reflete</h3>
-                    <p class="qual-description">O dinheiro entra, mas você não sabe exatamente para onde vai. No fim do mês, sobra menos do que deveria.</p>
+                    <p class="qual-description">O dinheiro entra, mas você não sabe exatamente para onde vai. No fim do
+                        mês, sobra menos do que deveria.</p>
                 </article>
                 <article class="qual-card animate-on-scroll delay-2">
                     <h3 class="qual-title">Tem time, mas ainda depende de você para tudo</h3>
-                    <p class="qual-description">Você contratou pessoas, mas continua sendo o gargalo. Sem você, a operação trava.</p>
+                    <p class="qual-description">Você contratou pessoas, mas continua sendo o gargalo. Sem você, a
+                        operação trava.</p>
                 </article>
                 <article class="qual-card animate-on-scroll delay-3">
                     <h3 class="qual-title">Trabalha mais que deveria, lucra menos que poderia</h3>
-                    <p class="qual-description">50, 60 horas por semana. Mas a margem continua apertada e a sensação é de que não evolui.</p>
+                    <p class="qual-description">50, 60 horas por semana. Mas a margem continua apertada e a sensação é
+                        de que não evolui.</p>
                 </article>
             </div>
 
@@ -1997,7 +2030,8 @@
                         <span class="accordion-icon">01</span>
                         <div class="accordion-text">
                             <h3>Eventos motivacionais</h3>
-                            <p>Você sai inspirado, mas volta sozinho para o mesmo caos. Sem método, sem acompanhamento.</p>
+                            <p>Você sai inspirado, mas volta sozinho para o mesmo caos. Sem método, sem acompanhamento.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -2038,14 +2072,16 @@
             <header class="section-header animate-on-scroll">
                 <span class="section-label">Método Brave</span>
                 <h2 class="section-title section-title--dark">Os 3 Pilares do Método Brave</h2>
-                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Identificamos onde o dinheiro vaza, onde a operação trava e onde falta direção. Os três ao mesmo tempo.</p>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Identificamos onde o dinheiro
+                    vaza, onde a operação trava e onde falta direção. Os três ao mesmo tempo.</p>
             </header>
 
             <div class="pilares-grid">
                 <article class="pilar-card animate-on-scroll delay-1">
                     <span class="pilar-number">01 Financeiro</span>
                     <h3 class="pilar-headline">Clareza de Números</h3>
-                    <p class="pilar-description">Saber exatamente onde o dinheiro vai — e parar de vazar sem você perceber.</p>
+                    <p class="pilar-description">Saber exatamente onde o dinheiro vai — e parar de vazar sem você
+                        perceber.</p>
                     <ul class="pilar-list">
                         <li>Margem real por produto ou serviço</li>
                         <li>Fluxo de caixa previsível</li>
@@ -2057,7 +2093,8 @@
                 <article class="pilar-card animate-on-scroll delay-2">
                     <span class="pilar-number">02 Operacional</span>
                     <h3 class="pilar-headline">Eficiência de Processos</h3>
-                    <p class="pilar-description">Empresa roda sem você apagando incêndio todo dia. Menos retrabalho, mais resultado.</p>
+                    <p class="pilar-description">Empresa roda sem você apagando incêndio todo dia. Menos retrabalho,
+                        mais resultado.</p>
                     <ul class="pilar-list">
                         <li>Gargalos que impedem crescer</li>
                         <li>Dependências críticas do dono</li>
@@ -2069,7 +2106,8 @@
                 <article class="pilar-card animate-on-scroll delay-3">
                     <span class="pilar-number">03 Processos</span>
                     <h3 class="pilar-headline">Direção e Prioridades</h3>
-                    <p class="pilar-description">Time alinhado, prioridades claras, execução real. Saber para onde ir e o que fazer primeiro.</p>
+                    <p class="pilar-description">Time alinhado, prioridades claras, execução real. Saber para onde ir e
+                        o que fazer primeiro.</p>
                     <ul class="pilar-list">
                         <li>Metas que fazem sentido</li>
                         <li>Plano de 90 dias com ações claras</li>
@@ -2080,11 +2118,13 @@
             </div>
 
             <div class="pilares-footer animate-on-scroll">
-                <p class="pilares-footer-text">Método validado em <strong>+5.000 empresas</strong>. Média de <strong>R$ 180K em vazamentos identificados</strong> por empresa.</p>
+                <p class="pilares-footer-text">Método validado em <strong>+5.000 empresas</strong>. Média de <strong>R$
+                        180K em vazamentos identificados</strong> por empresa.</p>
             </div>
 
             <div class="animate-on-scroll" style="text-align: center; margin-top: 2.5rem;">
-                <a href="#aplicar" class="hero-cta" style="background: #fff; color: var(--blue-dark);">Quero Aplicar o Método</a>
+                <a href="#aplicar" class="hero-cta" style="background: #fff; color: var(--blue-dark);">Quero Aplicar o
+                    Método</a>
             </div>
         </div>
     </section>
@@ -2145,26 +2185,31 @@
             <header class="section-header animate-on-scroll">
                 <span class="section-label">Presença Nacional</span>
                 <h2 class="section-title section-title--dark">Nos Maiores Eventos do Brasil e Exterior</h2>
-                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Leonardo Leão é referência nacional em gestão financeira para PMEs, compartilhando o Método Brave™ em grandes eventos corporativos, congressos de varejo e programas de capacitação empresarial.</p>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Leonardo Leão é referência
+                    nacional em gestão financeira para PMEs, compartilhando o Método Brave™ em grandes eventos
+                    corporativos, congressos de varejo e programas de capacitação empresarial.</p>
             </header>
 
             <div class="eventos-carousel animate-on-scroll">
                 <div class="eventos-track">
                     <div class="eventos-slides-wrapper" id="eventosSlides">
                         <div class="eventos-slide">
-                            <img src="assets/eventos/v2_38d87bd0-a0bd-4d9e-a237-c09016019e84.jpg" alt="Palestrante em Eventos Internacionais">
+                            <img src="assets/eventos/v2_38d87bd0-a0bd-4d9e-a237-c09016019e84.jpg"
+                                alt="Palestrante em Eventos Internacionais">
                             <div class="eventos-slide-caption">
                                 <h4>Palestrante em Eventos Internacionais</h4>
                             </div>
                         </div>
                         <div class="eventos-slide">
-                            <img src="assets/eventos/leonardo-palestra-nacional.jpg" alt="Formação Empresarial em Todo Brasil">
+                            <img src="assets/eventos/leonardo-palestra-nacional.jpg"
+                                alt="Formação Empresarial em Todo Brasil">
                             <div class="eventos-slide-caption">
                                 <h4>Formação Empresarial em Todo Brasil</h4>
                             </div>
                         </div>
                         <div class="eventos-slide">
-                            <img src="assets/eventos/leonardo-painel-varejo-insights.jpg" alt="Os maiores players do mercado confiam">
+                            <img src="assets/eventos/leonardo-painel-varejo-insights.jpg"
+                                alt="Os maiores players do mercado confiam">
                             <div class="eventos-slide-caption">
                                 <h4>Os maiores players do mercado confiam</h4>
                             </div>
@@ -2173,7 +2218,8 @@
                 </div>
                 <div class="carousel-nav">
                     <button class="carousel-arrow" id="prevSlide">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
@@ -2183,7 +2229,8 @@
                         <button class="carousel-dot" data-slide="2"></button>
                     </div>
                     <button class="carousel-arrow" id="nextSlide">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                            stroke-width="2">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
@@ -2198,7 +2245,8 @@
             <header class="section-header animate-on-scroll">
                 <span class="section-label">Sua Jornada</span>
                 <h2 class="section-title">Não é palestra. Não é curso. É construção.</h2>
-                <p class="section-subtitle">Você não assiste — você constrói seu plano com consultores, nos seus números reais.</p>
+                <p class="section-subtitle">Você não assiste — você constrói seu plano com consultores, nos seus números
+                    reais.</p>
             </header>
 
             <div class="jornada-grid">
@@ -2207,7 +2255,8 @@
                     <div class="jornada-content">
                         <span class="jornada-fase">Antes de tudo</span>
                         <h3 class="jornada-titulo">Conversa de Alinhamento</h3>
-                        <p class="jornada-desc">Analisamos seu perfil, maturidade da empresa e momento atual. Só avançamos se fizer sentido.</p>
+                        <p class="jornada-desc">Analisamos seu perfil, maturidade da empresa e momento atual. Só
+                            avançamos se fizer sentido.</p>
                     </div>
                 </div>
 
@@ -2216,7 +2265,8 @@
                     <div class="jornada-content">
                         <span class="jornada-fase">1 semana antes</span>
                         <h3 class="jornada-titulo">Diagnóstico Pré-Evento</h3>
-                        <p class="jornada-desc">Sessão estratégica de 1h com nosso time. Você chega sabendo onde estão os problemas.</p>
+                        <p class="jornada-desc">Sessão estratégica de 1h com nosso time. Você chega sabendo onde estão
+                            os problemas.</p>
                     </div>
                 </div>
 
@@ -2225,7 +2275,8 @@
                     <div class="jornada-content">
                         <span class="jornada-fase">O evento</span>
                         <h3 class="jornada-titulo">2 Dias Presenciais</h3>
-                        <p class="jornada-desc">Máximo 30 empresários em São Paulo. Você constrói seu plano com consultores.</p>
+                        <p class="jornada-desc">Máximo 30 empresários em São Paulo. Você constrói seu plano com
+                            consultores.</p>
                     </div>
                 </div>
 
@@ -2253,7 +2304,8 @@
             <div class="resumo-split animate-on-scroll">
                 <div class="resumo-left">
                     <h2>O Que Você Recebe no Programa</h2>
-                    <p>Formação executiva completa com acompanhamento de 90 dias. Tudo que você precisa para transformar faturamento em caixa, lucro e capital de giro.</p>
+                    <p>Formação executiva completa com acompanhamento de 90 dias. Tudo que você precisa para transformar
+                        faturamento em caixa, lucro e capital de giro.</p>
 
                     <div class="resumo-highlight">
                         <div class="number">2</div>
@@ -2308,7 +2360,8 @@
                             </div>
                         </li>
                     </ul>
-                    <a href="https://wa.me/5585988022469?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave" target="_blank" class="resumo-button">Quero Ser Analisado →</a>
+                    <a href="https://wa.me/5585988022469?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave"
+                        target="_blank" class="resumo-button">Quero Ser Analisado →</a>
                     <p class="resumo-note">Analisamos seu perfil em 48h. Zero compromisso.</p>
                 </div>
             </div>
@@ -2373,7 +2426,8 @@
                             </div>
                         </div>
 
-                        <a href="https://wa.me/5585988022469?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave" target="_blank" class="resumo-pricing-button">Quero Ser Analisado →</a>
+                        <a href="https://wa.me/5585988022469?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave"
+                            target="_blank" class="resumo-pricing-button">Quero Ser Analisado →</a>
                         <p class="resumo-pricing-note">Analisamos seu perfil em 48h. Zero compromisso.</p>
                     </div>
                 </div>
@@ -2389,24 +2443,28 @@
                 <header class="section-header animate-on-scroll">
                     <span class="section-label">Zero Risco</span>
                     <h2 class="section-title">Garantia Tripla Brave</h2>
-                    <p class="section-subtitle">Se você participar e implementar sem ver resultado, devolvemos seu investimento.</p>
+                    <p class="section-subtitle">Se você participar e implementar sem ver resultado, devolvemos seu
+                        investimento.</p>
                 </header>
 
                 <div class="garantia-grid">
                     <div class="garantia-item animate-on-scroll delay-1">
                         <span class="garantia-number">1</span>
                         <h3 class="garantia-title">Evento (48 horas)</h3>
-                        <p class="garantia-text">Se ao final dos 2 dias você sentir que não vale 10x o investido, devolvemos 100% + hospedagem + passagem.</p>
+                        <p class="garantia-text">Se ao final dos 2 dias você sentir que não vale 10x o investido,
+                            devolvemos 100% + hospedagem + passagem.</p>
                     </div>
                     <div class="garantia-item animate-on-scroll delay-2">
                         <span class="garantia-number">2</span>
                         <h3 class="garantia-title">Implementação (90 dias)</h3>
-                        <p class="garantia-text">Se você participar das consultorias e implementar sem ver clareza total: reembolso 100% + R$ 5.000 pelo seu tempo.</p>
+                        <p class="garantia-text">Se você participar das consultorias e implementar sem ver clareza
+                            total: reembolso 100% + R$ 5.000 pelo seu tempo.</p>
                     </div>
                     <div class="garantia-item animate-on-scroll delay-3">
                         <span class="garantia-number">3</span>
                         <h3 class="garantia-title">Satisfação Total</h3>
-                        <p class="garantia-text">Garantia de reembolso ou ajustes até sua satisfação completa. Sem letras miúdas.</p>
+                        <p class="garantia-text">Garantia de reembolso ou ajustes até sua satisfação completa. Sem
+                            letras miúdas.</p>
                     </div>
                 </div>
             </div>
@@ -2418,7 +2476,9 @@
         <div class="container">
             <header class="section-header animate-on-scroll">
                 <h2 class="section-title section-title--dark">Por que não deixar para a próxima turma?</h2>
-                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Somente esta turma terá <strong style="color: var(--accent-gold);">90 dias de consultoria de implementação</strong> incluídos. Exclusivo para a Turma Fundadora.</p>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Somente esta turma terá <strong
+                        style="color: var(--accent-gold);">90 dias de consultoria de implementação</strong> incluídos.
+                    Exclusivo para a Turma Fundadora.</p>
             </header>
 
             <div class="urgencia-content animate-on-scroll">
@@ -2447,13 +2507,15 @@
                         <div class="bento-card">
                             <span class="bento-number">01</span>
                             <h4>Sessão Estratégica Pré-Evento</h4>
-                            <p>1 hora de diagnóstico individual com um consultor Brave antes do evento. Você chega sabendo exatamente onde estão os maiores vazamentos.</p>
+                            <p>1 hora de diagnóstico individual com um consultor Brave antes do evento. Você chega
+                                sabendo exatamente onde estão os maiores vazamentos.</p>
                             <div class="bento-value">R$ 1.500</div>
                         </div>
                         <div class="bento-card">
                             <span class="bento-number">02</span>
                             <h4>Vaga para Convidado</h4>
-                            <p>Traga seu sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação.</p>
+                            <p>Traga seu sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1
+                                acelera 3x a implementação.</p>
                             <div class="bento-value">R$ 4.500</div>
                         </div>
                     </div>
@@ -2485,7 +2547,8 @@
                         <div class="qa-radio"></div>
                         <div class="qa-text">
                             <h4>Continuar como está</h4>
-                            <p>Seguir trabalhando 60h por semana, sem clareza de números, dependente de você para tudo funcionar.</p>
+                            <p>Seguir trabalhando 60h por semana, sem clareza de números, dependente de você para tudo
+                                funcionar.</p>
                         </div>
                         <span class="qa-result">Exaustão</span>
                     </div>
@@ -2503,7 +2566,8 @@
                         <div class="qa-radio"></div>
                         <div class="qa-text">
                             <h4>Implementar com quem já fez</h4>
-                            <p>2 dias de formação + 90 dias de acompanhamento com especialistas. Sistema validado em 5.000+ empresas.</p>
+                            <p>2 dias de formação + 90 dias de acompanhamento com especialistas. Sistema validado em
+                                5.000+ empresas.</p>
                         </div>
                         <span class="qa-result">Clareza em 90 dias</span>
                     </div>
@@ -2515,8 +2579,10 @@
             </div>
 
             <div class="opcoes-ps animate-on-scroll">
-                <p><strong>P.S.:</strong> Se você leu até aqui, não é por acaso. A maioria desiste no meio da página. Você não.</p>
-                <p><strong>P.P.S.:</strong> Turma de Janeiro tem 30 vagas. Quando acabar, só no segundo semestre. A decisão é sua.</p>
+                <p><strong>P.S.:</strong> Se você leu até aqui, não é por acaso. A maioria desiste no meio da página.
+                    Você não.</p>
+                <p><strong>P.P.S.:</strong> Turma de Janeiro tem 30 vagas. Quando acabar, só no segundo semestre. A
+                    decisão é sua.</p>
             </div>
         </div>
     </section>
@@ -2536,7 +2602,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>O investimento é apresentado durante a conversa de alinhamento, após análise do seu perfil. Trabalhamos com condições especiais para a Turma Fundadora de Janeiro 2026.</p>
+                        <p>O investimento é apresentado durante a conversa de alinhamento, após análise do seu perfil.
+                            Trabalhamos com condições especiais para a Turma Fundadora de Janeiro 2026.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2545,7 +2612,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>São Paulo - SP, em Janeiro de 2026. A localização exata será informada após confirmação da inscrição. Turma Fundadora com vagas limitadas a 30 empresários.</p>
+                        <p>São Paulo - SP, em Janeiro de 2026. A localização exata será informada após confirmação da
+                            inscrição. Turma Fundadora com vagas limitadas a 30 empresários.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2554,7 +2622,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Sim. Você tem direito a uma vaga adicional para sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação.</p>
+                        <p>Sim. Você tem direito a uma vaga adicional para sócio ou diretor sem custo adicional.
+                            Alinhamento da liderança desde o dia 1 acelera 3x a implementação.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2563,7 +2632,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Já atendemos 40+ segmentos diferentes (varejo, serviços, indústria, saúde, tech). O método é universal, o plano é 100% personalizado para sua realidade.</p>
+                        <p>Já atendemos 40+ segmentos diferentes (varejo, serviços, indústria, saúde, tech). O método é
+                            universal, o plano é 100% personalizado para sua realidade.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2572,7 +2642,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Não. Na verdade, a maioria dos empresários chega sem estrutura financeira clara. Parte do programa é justamente construir essa estrutura junto com você.</p>
+                        <p>Não. Na verdade, a maioria dos empresários chega sem estrutura financeira clara. Parte do
+                            programa é justamente construir essa estrutura junto com você.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2581,7 +2652,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>São 6 sessões individuais online (1h cada), quinzenais, ao longo de 90 dias. Você tem um consultor dedicado acompanhando sua implementação.</p>
+                        <p>São 6 sessões individuais online (1h cada), quinzenais, ao longo de 90 dias. Você tem um
+                            consultor dedicado acompanhando sua implementação.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2590,7 +2662,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>A presença nos dois dias é obrigatória. Se surgir um imprevisto, você pode transferir sua vaga para a próxima turma sem custo adicional.</p>
+                        <p>A presença nos dois dias é obrigatória. Se surgir um imprevisto, você pode transferir sua
+                            vaga para a próxima turma sem custo adicional.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2599,7 +2672,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Se ao final do primeiro dia você não enxergar valor, devolvemos 100% do investimento + custos de deslocamento. Sem perguntas.</p>
+                        <p>Se ao final do primeiro dia você não enxergar valor, devolvemos 100% do investimento + custos
+                            de deslocamento. Sem perguntas.</p>
                     </div>
                 </div>
             </div>
@@ -2611,23 +2685,28 @@
         <div class="cta-content animate-on-scroll">
             <span class="cta-badge">Turma Janeiro 2026</span>
             <h2 class="cta-title">30 vagas. <em>Uma análise antes de confirmar.</em></h2>
-            <p class="cta-text">Não vendemos para todo mundo. Fazemos análise de perfil porque queremos empresários comprometidos com implementação, não plateia buscando mais um evento.</p>
+            <p class="cta-text">Não vendemos para todo mundo. Fazemos análise de perfil porque queremos empresários
+                comprometidos com implementação, não plateia buscando mais um evento.</p>
 
             <!-- Condição Turma Fundadora -->
             <div class="promo-box">
                 <span class="promo-label">Turma Fundadora</span>
-                <p class="promo-text">Condição exclusiva para os primeiros 30 empresários. Investimento diferenciado + bônus exclusivos que não serão oferecidos nas próximas turmas.</p>
+                <p class="promo-text">Condição exclusiva para os primeiros 30 empresários. Investimento diferenciado +
+                    bônus exclusivos que não serão oferecidos nas próximas turmas.</p>
             </div>
 
-            <a href="https://wa.me/5585988022469?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave" target="_blank" class="cta-button">
+            <a href="https://wa.me/5585988022469?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave"
+                target="_blank" class="cta-button">
                 Quero Ser Analisado
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                    stroke-width="2">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
             </a>
 
             <div class="cta-footer">
-                <p>Você preenche → analisamos seu perfil em 48h → agendamos conversa → você decide se faz sentido. Zero pressão. Zero risco.</p>
+                <p>Você preenche → analisamos seu perfil em 48h → agendamos conversa → você decide se faz sentido. Zero
+                    pressão. Zero risco.</p>
             </div>
         </div>
     </section>

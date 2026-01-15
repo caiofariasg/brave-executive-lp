@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/brave-executive-program",
+      "permanent": false
+    }
+  ]
+}

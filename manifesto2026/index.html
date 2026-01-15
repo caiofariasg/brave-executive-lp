@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brave | A Mesa de Janeiro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <script src="//embed.typeform.com/next/embed.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Video Header Styles (Edge-to-Edge Minimalista) */
+        .video-highlight-container {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            position: relative;
+            aspect-ratio: 16/9;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem 2.5rem;
+            background: linear-gradient(to bottom, #050505 0%, #000 100%);
+        }
+
+        .hero-content {
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid #c4a065;
+            color: #c4a065;
+            padding: 5px 14px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 300;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 strong {
+            font-weight: 900;
+            color: #fff;
+        }
+
+        /* Split Section */
+        .split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: auto;
+        }
+
+        .split-left {
+            background: #0a0a0a;
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .split-right {
+            background: linear-gradient(135deg, #c4a065 0%, #8f7242 100%);
+            padding: 6rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            color: #000;
+        }
+
+        .split-content h2 {
+            font-size: 2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .split-content h2 strong {
+            font-weight: 900;
+        }
+
+        .split-content p {
+            font-size: 1rem;
+            line-height: 1.7;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            color: inherit;
+        }
+
+        /* color inherit for contrast on gold */
+
+        /* Timeline */
+        .timeline {
+            background: #050505;
+            padding: 8rem 4rem;
+        }
+
+        .timeline h3 {
+            text-align: center;
+            font-size: 0.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c4a065;
+            margin-bottom: 4rem;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 2rem;
+            border-left: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .timeline-month {
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-event {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .timeline-impact {
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .timeline-item.highlight {
+            background: rgba(196, 160, 101, 0.1);
+            border-left-color: #c4a065;
+        }
+
+        .timeline-item.highlight .timeline-event {
+            color: #c4a065;
+        }
+
+        /* CTA */
+        .cta {
+            padding: 8rem 4rem;
+            background: radial-gradient(circle at center, #111 0%, #000 100%);
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .cta h2 span {
+            color: #c4a065;
+        }
+
+        .cta p {
+            font-size: 1.1rem;
+            color: #888;
+            margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #c4a065;
+            color: #000;
+            padding: 1.5rem 3rem;
+            font-size: 1rem;
+            font-weight: 800;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            width: 100%;
+            max-width: 400px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+        }
+
+        .cta-note {
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #555;
+        }
+
+        footer {
+            padding: 4rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #444;
+            border-top: 1px solid #111;
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 900px) {
+            .split {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero {
+                padding: 1.5rem 1rem 2rem;
+            }
+
+            .cta,
+            .split-left,
+            .split-right,
+            .timeline {
+                padding: 3rem 1.5rem;
+            }
+
+            .video-highlight-container {
+                padding: 0.5rem 0 0 0;
+                background: #000;
+            }
+
+            .hero-tag {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+                line-height: 1.2;
+            }
+
+            .cta h2 {
+                font-size: 2rem;
+            }
+
+            .split-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .split-left,
+            .split-right {
+                padding: 2.5rem 1.25rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Video Highlight (Novo Header) -->
+    <div class="video-highlight-container">
+        <div style="position:relative;padding-top:56.25%;">
+            <iframe id="panda-ed63a5b3-0c1d-4dc8-95e0-589c873ff18b"
+                src="https://player-vz-44c54a31-156.tv.pandavideo.com.br/embed/?v=ed63a5b3-0c1d-4dc8-95e0-589c873ff18b"
+                style="border:none;position:absolute;top:0;left:0;"
+                allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture"
+                allowfullscreen=true
+                width="100%"
+                height="100%"
+                fetchpriority="high">
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Hero (Texto Original) -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-tag">Brave Executive Program</div>
+            <h1>Enquanto o Brasil decide o futuro, <strong>você decide o seu.</strong></h1>
+        </div>
+    </section>
+
+    <!-- Split (Texto Original) -->
+    <section class="split">
+        <div class="split-left">
+            <div class="split-content">
+                <h2>A maioria vai passar 2026 <strong>paralisada.</strong></h2>
+                <p>Esperando a eleição passar. Esperando a copa acabar. Esperando o dólar estabilizar. Esperando alguém
+                    dizer o que fazer.</p>
+                <p>E quando o ano terminar, vão olhar pra trás e perceber: mais 12 meses perdidos. Mais um ano de
+                    trabalho duro sem ver a cor do lucro.</p>
+                <p>Porque quem espera o cenário mudar, é engolido pelo cenário.</p>
+            </div>
+        </div>
+        <div class="split-right">
+            <div class="split-content">
+                <h2>Uma minoria vai usar o caos <strong>a seu favor.</strong></h2>
+                <p>Vão estruturar a casa enquanto os outros estão distraídos. Vão arrumar o caixa enquanto a atenção
+                    está na copa. Vão construir processos enquanto o país debate política.</p>
+                <p>E quando 2027 chegar, vão estar 12 meses na frente.</p>
+                <p>A pergunta é: <strong>de que lado você vai estar?</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline (Texto Original) -->
+    <section class="timeline">
+        <h3>2026: O Ano que Vai Separar</h3>
+        <div class="timeline-grid">
+            <div class="timeline-item highlight">
+                <div class="timeline-month">Janeiro</div>
+                <div class="timeline-event">Formação Executiva Brave</div>
+                <div class="timeline-impact">A janela de decisão. Quem entra, sai na frente.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">Junho</div>
+                <div class="timeline-event">Copa do Mundo</div>
+                <div class="timeline-impact">Brasil parado. Seu concorrente distraído. Você executa.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">Outubro</div>
+                <div class="timeline-event">Eleições</div>
+                <div class="timeline-impact">Caos político. Mercado travado. Você já estruturou a casa.</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-month">Dezembro</div>
+                <div class="timeline-event">O Balanço Final</div>
+                <div class="timeline-impact">Quem decidiu em Janeiro, colhe. Quem esperou, lamenta.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final (Texto Original + Typeform Integrado) -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>30 empresários.<br><span>Uma única decisão.</span><br>Antes do caos.</h2>
+            <p>Enquanto o país se divide, esse grupo vai se unir em torno de uma coisa: <strong>resultado real</strong>.
+                30 empresários. Um ano inteiro de acompanhamento. Os detalhes? Só na <strong>terça-feira, 13/01 às 20h</strong>. Garanta sua vaga para descobrir como funciona.</p>
+
+            <a href="https://braveeducacao.typeform.com/to/wMe4euGG?utm_source=lp_manifesto&utm_medium=landing_page&utm_campaign=brave_executive_2026&utm_term=manifesto&utm_content=cta_button"
+                target="_blank" class="cta-button">
+                Quero Fazer Parte →
+            </a>
+
+            <p class="cta-note">Fazemos análise do seu cenário antes de confirmar. Não queremos plateia. Queremos
+                comprometimento.</p>
+        </div>
+    </section>
+
+    <footer>
+        Brave Educação Empresarial © 2026
+    </footer>
+
+</body>
+
+</html>
