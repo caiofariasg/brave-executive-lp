@@ -131,11 +131,19 @@
             color: var(--text-on-dark);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             padding: 5rem;
-            gap: 4rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+            max-width: 1200px;
+            width: 100%;
         }
 
         .hero-content {
@@ -247,8 +255,10 @@
 
         @media (max-width: 900px) {
             .hero {
-                flex-direction: column;
                 padding: 4rem 2rem;
+            }
+            .hero-inner {
+                flex-direction: column;
                 text-align: center;
             }
             .hero-content {
@@ -1814,19 +1824,21 @@
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-content">
-            <span class="hero-label">Brave Executive Program</span>
-            <h1 class="hero-title">Transforme Faturamento em <span>Caixa, Lucro e Capital de Giro</span></h1>
-            <p class="hero-subtitle">Formação executiva presencial. 2 dias de formação + 90 dias de implementação guiada com consultores especializados.</p>
-            <a href="#aplicar" class="hero-cta">Solicitar Informações</a>
-            <p class="hero-note">Turma Janeiro 2026 · São Paulo</p>
-        </div>
+        <div class="hero-inner">
+            <div class="hero-content">
+                <span class="hero-label">Brave Executive Program</span>
+                <h1 class="hero-title">Transforme Faturamento em <span>Caixa, Lucro e Capital de Giro</span></h1>
+                <p class="hero-subtitle">Formação executiva presencial. 2 dias de formação + 90 dias de implementação guiada com consultores especializados.</p>
+                <a href="#aplicar" class="hero-cta">Solicitar Informações</a>
+                <p class="hero-note">Turma Janeiro 2026 · São Paulo</p>
+            </div>
 
-        <div class="hero-photo-card">
-            <img src="assets/v2_0f7d8bb4-8e1a-4943-85b0-adf9dcfd04c2.jpg" alt="Leonardo Leão">
-            <div class="name-tag">
-                <strong>Leonardo Leão</strong>
-                <span>CEO Brave Educação</span>
+            <div class="hero-photo-card">
+                <img src="assets/v2_0f7d8bb4-8e1a-4943-85b0-adf9dcfd04c2.jpg" alt="Leonardo Leão">
+                <div class="name-tag">
+                    <strong>Leonardo Leão</strong>
+                    <span>CEO Brave Educação</span>
+                </div>
             </div>
         </div>
     </section>
