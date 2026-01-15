@@ -1,0 +1,2585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brave Executive Program | Janeiro 2026</title>
+    <meta name="description" content="Formação Executiva Presencial. Transforme Faturamento em Caixa, Lucro e Capital de Giro. Método validado em +5.000 empresas.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== CSS Variables - BRAVE DESIGN SYSTEM ===== */
+        :root {
+            /* Cores Principais Brave */
+            --blue-primary: #2b2d42;
+            --blue-dark: #0f1c2f;
+            --blue-secondary: #2b3272;
+            --yellow-primary: #eaca2d;
+            --yellow-dark: #d59f07;
+            --gray-blue: #8d99ae;
+            --gray-blue-dark: #505168;
+            --gray-light: #edf2f4;
+
+            /* Backgrounds */
+            --bg-dark: #2b2d42;
+            --bg-dark-soft: #0f1c2f;
+            --bg-dark-card: #363852;
+            --bg-light: #edf2f4;
+            --bg-white: #FFFFFF;
+
+            /* Textos */
+            --text-on-dark: #FFFFFF;
+            --text-on-dark-muted: rgba(255, 255, 255, 0.85);
+            --text-on-dark-subtle: rgba(255, 255, 255, 0.6);
+            --text-on-light: #2b2d42;
+            --text-secondary: #505168;
+            --text-muted: #8d99ae;
+
+            /* Accent (Amarelo Brave) */
+            --accent-gold: #eaca2d;
+            --accent-gold-light: #f5e07a;
+            --accent-gold-hover: #d59f07;
+            --accent-gold-bg: rgba(234, 202, 45, 0.1);
+
+            /* Borders */
+            --border-light: #edf2f4;
+            --border-dark: rgba(255, 255, 255, 0.12);
+
+            /* Tipografia Premium - Inter */
+            --font-display: 'Inter', sans-serif;
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Red Hat Display', sans-serif;
+
+            /* Layout */
+            --section-padding: clamp(5rem, 12vw, 8rem);
+            --container-width: 1140px;
+            --container-padding: clamp(1.5rem, 5vw, 3rem);
+
+            /* Brave Patterns */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.75rem;
+            --radius-lg: 1rem;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== Reset ===== */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background: var(--bg-dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+
+        /* ===== HERO SECTION - MINIMAL + CARD FOTO (Inter) ===== */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f1c2f 0%, #1a2744 50%, #0f1c2f 100%);
+            color: var(--text-on-dark);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem;
+            gap: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 550px;
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--text-on-dark);
+        }
+
+        .hero-title span {
+            color: var(--accent-gold);
+        }
+
+        .hero-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-note {
+            margin-top: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Photo Card */
+        .hero-photo-card {
+            flex: 0 0 400px;
+            position: relative;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-photo-card img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .hero-photo-card .name-tag {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gold);
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .hero-photo-card .name-tag strong {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+        }
+
+        .hero-photo-card .name-tag span {
+            font-size: 0.65rem;
+            color: rgba(0,0,0,0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                padding: 4rem 2rem;
+                text-align: center;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-photo-card {
+                flex: none;
+                width: 100%;
+                max-width: 350px;
+            }
+            .hero-photo-card img {
+                height: 400px;
+            }
+        }
+
+        /* ===== QUALIFICAÇÃO ===== */
+        .qualificacao {
+            background: var(--bg-light);
+            padding: var(--section-padding) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-label {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--blue-dark);
+            background: var(--accent-gold);
+            padding: 0.5rem 1.25rem;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border-radius: var(--radius-md);
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 400;
+            color: var(--blue-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-title--dark {
+            color: var(--text-on-dark);
+        }
+
+        .section-subtitle {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--gray-blue-dark);
+            max-width: 550px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .qualificacao-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .qualificacao-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .qual-card {
+            background: var(--bg-white);
+            padding: 2.25rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .qual-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .qual-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .qual-description {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--gray-blue-dark);
+            line-height: 1.6;
+        }
+
+        .qualificacao-footer {
+            text-align: center;
+            padding: 2.5rem;
+            background: var(--blue-primary);
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+        }
+
+        .qualificacao-footer-yes {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-on-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .qualificacao-footer-yes strong {
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .qualificacao-footer-no {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+        }
+
+        /* ===== PILARES ===== */
+        .pilares {
+            background: var(--blue-primary);
+            padding: var(--section-padding) 0;
+            color: var(--text-on-dark);
+        }
+
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .pilares-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .pilar-card {
+            background: rgba(255,255,255,0.04);
+            padding: 2.5rem 2rem;
+            position: relative;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.08);
+            transition: all 0.3s ease;
+        }
+
+        .pilar-card:hover {
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-2px);
+        }
+
+        .pilar-number {
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .pilar-headline {
+            font-family: var(--font-heading);
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: var(--text-on-dark);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .pilar-description {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .pilar-list {
+            list-style: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 1.25rem;
+        }
+
+        .pilar-list li {
+            font-family: var(--font-body);
+            font-size: 0.875rem;
+            color: var(--text-on-dark-muted);
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .pilar-list li::before {
+            content: '→';
+            color: var(--accent-gold);
+            font-size: 0.75rem;
+        }
+
+        .pilares-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem 2rem;
+            background: var(--accent-gold);
+            border-radius: var(--radius-lg);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pilares-footer-text {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--blue-dark);
+        }
+
+        .pilares-footer-text strong {
+            font-weight: 800;
+        }
+
+        /* ===== JORNADA ===== */
+        .jornada {
+            background: var(--bg-white);
+            padding: var(--section-padding) 0;
+        }
+
+        .jornada-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            .jornada-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.25rem;
+            }
+
+            .jornada-grid::before {
+                content: '';
+                position: absolute;
+                top: 28px;
+                left: 12%;
+                right: 12%;
+                height: 2px;
+                background: var(--gray-light);
+                z-index: 1;
+            }
+        }
+
+        .jornada-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 1.75rem 1.25rem;
+            background: var(--bg-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0,0,0,0.06);
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .jornada-item:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .jornada-step {
+            width: 48px;
+            height: 48px;
+            background: var(--blue-primary);
+            color: var(--bg-white);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+        }
+
+        .jornada-content {
+            flex: 1;
+        }
+
+        .jornada-fase {
+            font-family: var(--font-heading);
+            font-size: 0.65rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+            background: var(--accent-gold);
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .jornada-titulo {
+            font-family: var(--font-heading);
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .jornada-desc {
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            color: var(--gray-blue-dark);
+            line-height: 1.5;
+        }
+
+        /* ===== GARANTIA ===== */
+        .garantia {
+            background: var(--bg-light);
+            padding: var(--section-padding) 0;
+        }
+
+        .garantia-box {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .garantia-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .garantia-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .garantia-item {
+            padding: 2.25rem;
+            background: var(--bg-white);
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(0,0,0,0.06);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .garantia-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .garantia-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--blue-primary);
+            color: var(--bg-white);
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+        }
+
+        .garantia-title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .garantia-text {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--gray-blue-dark);
+            line-height: 1.6;
+        }
+
+        /* ===== FAQ ===== */
+        .faq {
+            background: var(--bg-white);
+            padding: var(--section-padding) 0;
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-white);
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .faq-item.active {
+            border-color: var(--blue-primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            padding: 1.25rem 1.5rem;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+            gap: 1rem;
+        }
+
+        .faq-question:hover {
+            background: var(--bg-light);
+        }
+
+        .faq-item.active .faq-question {
+            background: var(--blue-primary);
+            color: var(--text-on-dark);
+        }
+
+        .faq-icon {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            position: relative;
+            flex-shrink: 0;
+            transition: transform 0.2s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-icon::before,
+        .faq-icon::after {
+            content: '';
+            position: absolute;
+            background: var(--blue-dark);
+            transition: transform 0.2s ease;
+        }
+
+        .faq-icon::before {
+            width: 12px;
+            height: 2px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .faq-icon::after {
+            width: 2px;
+            height: 12px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 1.5rem;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 1rem 1.5rem 1.5rem;
+        }
+
+        .faq-answer p {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--gray-blue-dark);
+            line-height: 1.7;
+        }
+
+        /* ===== URGÊNCIA ===== */
+        .urgencia {
+            background: var(--blue-dark);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) 0;
+        }
+
+        .urgencia-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .urgencia-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .urgencia-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .urgencia-item {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .urgencia-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .urgencia-item p {
+            font-size: 0.95rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+        }
+
+        .urgencia-quote {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(234, 202, 45, 0.08);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0.5rem;
+        }
+
+        .urgencia-quote p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-on-dark);
+            margin: 0;
+        }
+
+        /* ===== BÔNUS SECTION - BENTO BOX STYLE ===== */
+        .bonus-section {
+            margin: 3rem 0;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+
+        .bento-header {
+            grid-column: 1 / -1;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.5rem 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .bento-header h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin: 0;
+        }
+
+        .bento-header p {
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            opacity: 0.8;
+            margin-bottom: 0;
+        }
+
+        .bento-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bento-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .bento-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .bento-card p {
+            font-size: 0.875rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .bento-card .bento-value {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== CTA ===== */
+        .cta {
+            background: var(--blue-primary);
+            color: var(--text-on-dark);
+            padding: var(--section-padding) var(--container-padding);
+        }
+
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .cta-badge {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 0.5rem 1.25rem;
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+            border-radius: var(--radius-md);
+        }
+
+        .cta-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-title em {
+            font-style: italic;
+            color: var(--accent-gold);
+        }
+
+        .cta-text {
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.1rem 2.75rem;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-button:hover svg {
+            transform: translateX(4px);
+        }
+
+        .cta-footer {
+            margin-top: 2.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cta-footer p {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.7;
+        }
+
+        /* Promo Box */
+        .promo-box {
+            background: rgba(234, 202, 45, 0.1);
+            border: 1px solid rgba(234, 202, 45, 0.3);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .promo-label {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            font-family: var(--font-heading);
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.6rem;
+            margin-bottom: 0.75rem;
+            border-radius: var(--radius-sm);
+        }
+
+        .promo-text {
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: var(--blue-dark);
+            padding: 2.5rem var(--container-padding);
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-on-dark);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-copy {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--gray-blue);
+        }
+
+        /* ===== Mobile ===== */
+        @media (max-width: 480px) {
+            .hero-badge {
+                font-size: 0.6rem;
+                padding: 0.4rem 0.75rem;
+            }
+
+            .qual-card,
+            .pilar-card {
+                padding: 1.5rem;
+            }
+
+            .garantia-item {
+                padding: 1.25rem;
+            }
+
+            .jornada-item {
+                padding: 1rem;
+            }
+        }
+
+        /* ===== POR QUE OUTROS FALHAM - ACCORDION STYLE ===== */
+        .falham {
+            background: var(--bg-light);
+            padding: var(--section-padding) 0;
+        }
+
+        .label-brave {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        .falham-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 700px;
+            margin: 3rem auto 0;
+        }
+
+        .accordion-item {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .accordion-item:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .accordion-icon {
+            flex-shrink: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            background: var(--blue-primary);
+            padding: 0.35rem 0.6rem;
+            border-radius: 0.25rem;
+        }
+
+        .accordion-text h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .accordion-text p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* ===== QUEM ESTÁ POR TRÁS (LEONARDO) ===== */
+        .fundador {
+            background: var(--bg-light);
+            padding: var(--section-padding) 0;
+        }
+
+        .fundador-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .fundador-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        .fundador-foto {
+            position: relative;
+        }
+
+        .fundador-foto img {
+            width: 100%;
+            border-radius: 0.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .fundador-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 800;
+            color: var(--blue-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .fundador-role {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .fundador-bio {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .fundador-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-white);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .fundador-stat-item strong {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--blue-primary);
+        }
+
+        .fundador-stat-item span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .fundador-quote {
+            padding: 1.5rem;
+            background: rgba(234, 202, 45, 0.1);
+            border-left: 4px solid var(--accent-gold);
+            border-radius: 0.5rem;
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* ===== CARROSSEL EVENTOS ===== */
+        .eventos {
+            background: var(--blue-dark);
+            padding: var(--section-padding) 0;
+            overflow: hidden;
+        }
+
+        .eventos-carousel {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto 0;
+        }
+
+        .eventos-track {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.5rem;
+        }
+
+        .eventos-slides-wrapper {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .eventos-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .eventos-slide img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+        }
+
+        .eventos-slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 2rem;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: #fff;
+        }
+
+        .eventos-slide-caption h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #fff;
+        }
+
+        .carousel-arrow:hover {
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+        }
+
+        .carousel-arrow svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.3);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+
+        .carousel-dot.active {
+            background: var(--accent-gold);
+            width: 30px;
+            border-radius: 5px;
+        }
+
+        /* ===== 3 OPÇÕES - ESTILO PERGUNTA/RESPOSTA ===== */
+        .opcoes {
+            background: var(--blue-primary);
+            padding: var(--section-padding) 0;
+        }
+
+        .opcoes-qa {
+            max-width: 700px;
+            margin: 3rem auto 0;
+        }
+
+        .qa-question {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .qa-question h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .qa-question p {
+            color: var(--text-on-dark-muted);
+            font-size: 0.95rem;
+        }
+
+        .qa-answers {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .qa-answer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .qa-answer:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .qa-answer.selected {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .qa-answer.selected * {
+            color: var(--blue-dark) !important;
+        }
+
+        .qa-radio {
+            width: 24px;
+            height: 24px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .qa-answer.selected .qa-radio {
+            background: var(--blue-dark);
+            border-color: var(--blue-dark);
+        }
+
+        .qa-answer.selected .qa-radio::after {
+            content: '✓';
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .qa-text {
+            flex: 1;
+        }
+
+        .qa-text h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .qa-text p {
+            font-size: 0.85rem;
+            color: var(--text-on-dark-muted);
+            margin: 0;
+        }
+
+        .qa-result {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.4rem 0.75rem;
+            border-radius: 2rem;
+            flex-shrink: 0;
+        }
+
+        .qa-answer:nth-child(1) .qa-result {
+            background: rgba(230, 57, 70, 0.15);
+            color: #e63946;
+        }
+
+        .qa-answer:nth-child(2) .qa-result {
+            background: rgba(244, 162, 97, 0.15);
+            color: #f4a261;
+        }
+
+        .qa-answer.selected .qa-result {
+            background: var(--blue-dark);
+            color: var(--accent-gold) !important;
+        }
+
+        .opcoes-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+        }
+
+        .opcoes-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .opcoes-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .opcoes-ps {
+            max-width: 700px;
+            margin: 2.5rem auto 0;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .opcoes-ps p {
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+            margin-bottom: 0.75rem;
+            line-height: 1.7;
+        }
+
+        .opcoes-ps p:last-child {
+            margin-bottom: 0;
+        }
+
+        .opcoes-ps strong {
+            color: var(--accent-gold);
+        }
+
+        /* ===== RESUMO/PACOTE - RESPONSIVO (Split Desktop + Pricing Mobile) ===== */
+        .resumo {
+            background: var(--blue-dark);
+            padding: var(--section-padding) 0;
+        }
+
+        /* === VERSÃO DESKTOP: Split Layout (Opção 10) === */
+        .resumo-split {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .resumo-left {
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 3rem;
+        }
+
+        .resumo-left h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .resumo-left > p {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .resumo-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .resumo-highlight .number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .resumo-highlight span {
+            font-weight: 500;
+        }
+
+        .resumo-right {
+            background: var(--blue-primary);
+            padding: 3rem;
+        }
+
+        .resumo-right-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .resumo-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .resumo-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .resumo-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .resumo-item span {
+            color: var(--accent-gold);
+            font-size: 1rem;
+        }
+
+        .resumo-item p {
+            color: #fff;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .resumo-item small {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .resumo-button {
+            display: block;
+            width: 100%;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .resumo-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .resumo-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* === VERSÃO MOBILE: Pricing Table (Opção 7) === */
+        .resumo-pricing {
+            display: none;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .resumo-pricing-card {
+            background: linear-gradient(145deg, #1a2744, #0f1c2f);
+            border: 2px solid var(--accent-gold);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .resumo-pricing-header {
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .resumo-pricing-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .resumo-pricing-header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .resumo-pricing-body {
+            padding: 2rem;
+        }
+
+        .resumo-pricing-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+        }
+
+        .resumo-pricing-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .resumo-pricing-item:last-child {
+            border-bottom: none;
+        }
+
+        .resumo-pricing-item span {
+            color: var(--accent-gold);
+        }
+
+        .resumo-pricing-item p {
+            color: #fff;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        .resumo-pricing-item small {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .resumo-pricing-bonus {
+            background: rgba(234,202,45,0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .resumo-pricing-bonus-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .resumo-pricing-bonus-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .resumo-pricing-bonus-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        .resumo-pricing-bonus-item span {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .resumo-pricing-button {
+            display: block;
+            width: 100%;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .resumo-pricing-button:hover {
+            background: #fff;
+        }
+
+        .resumo-pricing-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* === RESPONSIVO: Troca de layout === */
+        @media (max-width: 768px) {
+            .resumo-split {
+                display: none;
+            }
+            .resumo-pricing {
+                display: block;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-label">Brave Executive Program</span>
+            <h1 class="hero-title">Transforme Faturamento em <span>Caixa, Lucro e Capital de Giro</span></h1>
+            <p class="hero-subtitle">Formação executiva presencial. 2 dias de imersão + 90 dias de implementação guiada com consultores especializados.</p>
+            <a href="#aplicar" class="hero-cta">Solicitar Informações</a>
+            <p class="hero-note">Turma Janeiro 2026 · São Paulo</p>
+        </div>
+
+        <div class="hero-photo-card">
+            <img src="assets/v2_0f7d8bb4-8e1a-4943-85b0-adf9dcfd04c2.jpg" alt="Leonardo Leão">
+            <div class="name-tag">
+                <strong>Leonardo Leão</strong>
+                <span>CEO Brave Educação</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUALIFICAÇÃO -->
+    <section class="qualificacao">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-label">Antes de continuar</span>
+                <h2 class="section-title">Reconhece esse cenário?</h2>
+                <p class="section-subtitle">Se você se identifica com pelo menos dois desses pontos, esse programa foi feito para você.</p>
+            </header>
+
+            <div class="qualificacao-grid">
+                <article class="qual-card animate-on-scroll delay-1">
+                    <h3 class="qual-title">Fatura R$ 100K+ mas o caixa não reflete</h3>
+                    <p class="qual-description">O dinheiro entra, mas você não sabe exatamente para onde vai. No fim do mês, sobra menos do que deveria.</p>
+                </article>
+                <article class="qual-card animate-on-scroll delay-2">
+                    <h3 class="qual-title">Tem time, mas ainda depende de você para tudo</h3>
+                    <p class="qual-description">Você contratou pessoas, mas continua sendo o gargalo. Sem você, a operação trava.</p>
+                </article>
+                <article class="qual-card animate-on-scroll delay-3">
+                    <h3 class="qual-title">Trabalha mais que deveria, lucra menos que poderia</h3>
+                    <p class="qual-description">50, 60 horas por semana. Mas a margem continua apertada e a sensação é de que não evolui.</p>
+                </article>
+            </div>
+
+            <div class="qualificacao-footer animate-on-scroll">
+                <p class="qualificacao-footer-yes">Se sim, <strong>faz sentido conversar.</strong></p>
+                <p class="qualificacao-footer-no">Se não, esse programa não é para você — e tudo bem.</p>
+            </div>
+
+            <div class="animate-on-scroll" style="text-align: center; margin-top: 2.5rem;">
+                <a href="#aplicar" class="hero-cta">Ver Como Participar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUE OUTROS FALHAM -->
+    <section class="falham">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="label-brave">A verdade</span>
+                <h2 class="section-title">Por que outros métodos não funcionam</h2>
+                <p class="section-subtitle">A maioria dos empresários já tentou de tudo. Por que não deu certo?</p>
+            </header>
+
+            <div class="falham-accordion animate-on-scroll">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">01</span>
+                        <div class="accordion-text">
+                            <h3>Eventos motivacionais</h3>
+                            <p>Você sai inspirado, mas volta sozinho para o mesmo caos. Sem método, sem acompanhamento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">02</span>
+                        <div class="accordion-text">
+                            <h3>Cursos online</h3>
+                            <p>95% não terminam. Assistir aula não muda processo. Falta implementação guiada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">03</span>
+                        <div class="accordion-text">
+                            <h3>Consultorias genéricas</h3>
+                            <p>R$ 80k+ por diagnósticos que não consideram a realidade da PME brasileira.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">04</span>
+                        <div class="accordion-text">
+                            <h3>Mentorias em grupo</h3>
+                            <p>300+ pessoas na mesma sala. Impossível ter atenção individual e plano personalizado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PILARES -->
+    <section class="pilares">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-label">Método Brave</span>
+                <h2 class="section-title section-title--dark">Os 3 Pilares do Método Brave</h2>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Identificamos onde o dinheiro vaza, onde a operação trava e onde falta direção. Os três ao mesmo tempo.</p>
+            </header>
+
+            <div class="pilares-grid">
+                <article class="pilar-card animate-on-scroll delay-1">
+                    <span class="pilar-number">01 Financeiro</span>
+                    <h3 class="pilar-headline">Clareza de Números</h3>
+                    <p class="pilar-description">Saber exatamente onde o dinheiro vai — e parar de vazar sem você perceber.</p>
+                    <ul class="pilar-list">
+                        <li>Margem real por produto ou serviço</li>
+                        <li>Fluxo de caixa previsível</li>
+                        <li>Indicadores que mostram a verdade</li>
+                        <li>DRE gerencial estruturado</li>
+                    </ul>
+                </article>
+
+                <article class="pilar-card animate-on-scroll delay-2">
+                    <span class="pilar-number">02 Operacional</span>
+                    <h3 class="pilar-headline">Eficiência de Processos</h3>
+                    <p class="pilar-description">Empresa roda sem você apagando incêndio todo dia. Menos retrabalho, mais resultado.</p>
+                    <ul class="pilar-list">
+                        <li>Gargalos que impedem crescer</li>
+                        <li>Dependências críticas do dono</li>
+                        <li>Processos que funcionam sem você</li>
+                        <li>Automações prioritárias</li>
+                    </ul>
+                </article>
+
+                <article class="pilar-card animate-on-scroll delay-3">
+                    <span class="pilar-number">03 Processos</span>
+                    <h3 class="pilar-headline">Direção e Prioridades</h3>
+                    <p class="pilar-description">Time alinhado, prioridades claras, execução real. Saber para onde ir e o que fazer primeiro.</p>
+                    <ul class="pilar-list">
+                        <li>Metas que fazem sentido</li>
+                        <li>Plano de 90 dias com ações claras</li>
+                        <li>Alavancas certas na ordem certa</li>
+                        <li>Rituais de gestão implementados</li>
+                    </ul>
+                </article>
+            </div>
+
+            <div class="pilares-footer animate-on-scroll">
+                <p class="pilares-footer-text">Método validado em <strong>+5.000 empresas</strong>. Média de <strong>R$ 180K em vazamentos identificados</strong> por empresa.</p>
+            </div>
+
+            <div class="animate-on-scroll" style="text-align: center; margin-top: 2.5rem;">
+                <a href="#aplicar" class="hero-cta" style="background: #fff; color: var(--blue-dark);">Quero Aplicar o Método</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUEM ESTÁ POR TRÁS -->
+    <section class="fundador">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-label">Quem está por trás</span>
+                <h2 class="section-title">O Mentor</h2>
+            </header>
+
+            <div class="fundador-grid animate-on-scroll">
+                <div class="fundador-foto">
+                    <img src="assets/fe5cbdab-7303-426a-9a9b-0d6e930e0f90.jpg" alt="Leonardo Leão">
+                </div>
+                <div class="fundador-content">
+                    <h2>Leonardo Leão</h2>
+                    <span class="fundador-role">CEO Brave Educação</span>
+                    <p class="fundador-bio">
+                        Especialista em gestão financeira para PMEs com mais de 15 anos de experiência no mercado.
+                        Já ajudou mais de 5.000 empresários a transformarem faturamento em lucro real através
+                        de metodologias práticas e implementáveis.
+                    </p>
+                    <p class="fundador-bio">
+                        Criador do Método Brave, que combina diagnóstico financeiro, operacional e estratégico
+                        em um sistema único de implementação com acompanhamento real.
+                    </p>
+                    <div class="fundador-stats">
+                        <div class="fundador-stat-item">
+                            <strong>5.000+</strong>
+                            <span>empresários mentorados</span>
+                        </div>
+                        <div class="fundador-stat-item">
+                            <strong>R$ 8bi</strong>
+                            <span>em operações gerenciadas</span>
+                        </div>
+                        <div class="fundador-stat-item">
+                            <strong>15+</strong>
+                            <span>anos de experiência</span>
+                        </div>
+                        <div class="fundador-stat-item">
+                            <strong>40+</strong>
+                            <span>segmentos atendidos</span>
+                        </div>
+                    </div>
+                    <blockquote class="fundador-quote">
+                        "Não existe empresa ruim, existe gestão mal estruturada. E isso tem solução."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARROSSEL DE EVENTOS -->
+    <section class="eventos">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-label">Presença Nacional</span>
+                <h2 class="section-title section-title--dark">Nos Maiores Eventos do Brasil e Exterior</h2>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Leonardo Leão é referência nacional em gestão financeira para PMEs, compartilhando o Método Brave™ em grandes eventos corporativos, congressos de varejo e programas de capacitação empresarial.</p>
+            </header>
+
+            <div class="eventos-carousel animate-on-scroll">
+                <div class="eventos-track">
+                    <div class="eventos-slides-wrapper" id="eventosSlides">
+                        <div class="eventos-slide">
+                            <img src="assets/eventos/v2_38d87bd0-a0bd-4d9e-a237-c09016019e84.jpg" alt="Palestrante em Eventos Internacionais">
+                            <div class="eventos-slide-caption">
+                                <h4>Palestrante em Eventos Internacionais</h4>
+                            </div>
+                        </div>
+                        <div class="eventos-slide">
+                            <img src="assets/eventos/leonardo-palestra-nacional.jpg" alt="Formação Empresarial em Todo Brasil">
+                            <div class="eventos-slide-caption">
+                                <h4>Formação Empresarial em Todo Brasil</h4>
+                            </div>
+                        </div>
+                        <div class="eventos-slide">
+                            <img src="assets/eventos/leonardo-painel-varejo-insights.jpg" alt="Os maiores players do mercado confiam">
+                            <div class="eventos-slide-caption">
+                                <h4>Os maiores players do mercado confiam</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-arrow" id="prevSlide">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <div class="carousel-dots" id="carouselDots">
+                        <button class="carousel-dot active" data-slide="0"></button>
+                        <button class="carousel-dot" data-slide="1"></button>
+                        <button class="carousel-dot" data-slide="2"></button>
+                    </div>
+                    <button class="carousel-arrow" id="nextSlide">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JORNADA -->
+    <section class="jornada">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-label">Sua Jornada</span>
+                <h2 class="section-title">Não é palestra. Não é curso. É construção.</h2>
+                <p class="section-subtitle">Você não assiste — você constrói seu plano com consultores, nos seus números reais.</p>
+            </header>
+
+            <div class="jornada-grid">
+                <div class="jornada-item animate-on-scroll delay-1">
+                    <span class="jornada-step">1</span>
+                    <div class="jornada-content">
+                        <span class="jornada-fase">Antes de tudo</span>
+                        <h3 class="jornada-titulo">Conversa de Alinhamento</h3>
+                        <p class="jornada-desc">Analisamos seu perfil, maturidade da empresa e momento atual. Só avançamos se fizer sentido.</p>
+                    </div>
+                </div>
+
+                <div class="jornada-item animate-on-scroll delay-2">
+                    <span class="jornada-step">2</span>
+                    <div class="jornada-content">
+                        <span class="jornada-fase">1 semana antes</span>
+                        <h3 class="jornada-titulo">Diagnóstico Pré-Evento</h3>
+                        <p class="jornada-desc">Sessão estratégica de 1h com nosso time. Você chega sabendo onde estão os problemas.</p>
+                    </div>
+                </div>
+
+                <div class="jornada-item animate-on-scroll delay-3">
+                    <span class="jornada-step">3</span>
+                    <div class="jornada-content">
+                        <span class="jornada-fase">O evento</span>
+                        <h3 class="jornada-titulo">2 Dias Presenciais</h3>
+                        <p class="jornada-desc">Máximo 30 empresários em São Paulo. Você constrói seu plano com consultores.</p>
+                    </div>
+                </div>
+
+                <div class="jornada-item animate-on-scroll delay-4">
+                    <span class="jornada-step">4</span>
+                    <div class="jornada-content">
+                        <span class="jornada-fase">Pós-evento</span>
+                        <h3 class="jornada-titulo">90 Dias de Implementação</h3>
+                        <p class="jornada-desc">6 consultorias quinzenais + plataforma 24/7 + cobrança estruturada.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="animate-on-scroll" style="text-align: center; margin-top: 3rem;">
+                <a href="#aplicar" class="hero-cta">Próximo Passo: Conversa de Alinhamento</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESUMO/PACOTE -->
+    <section class="resumo" id="aplicar">
+        <div class="container">
+
+            <!-- VERSÃO DESKTOP: Split Layout -->
+            <div class="resumo-split animate-on-scroll">
+                <div class="resumo-left">
+                    <h2>O Que Você Recebe no Programa</h2>
+                    <p>Formação executiva completa com acompanhamento de 90 dias. Tudo que você precisa para transformar faturamento em caixa, lucro e capital de giro.</p>
+
+                    <div class="resumo-highlight">
+                        <div class="number">2</div>
+                        <span>Dias intensivos de formação presencial em São Paulo</span>
+                    </div>
+                    <div class="resumo-highlight">
+                        <div class="number">90</div>
+                        <span>Dias de acompanhamento com 6 consultorias quinzenais</span>
+                    </div>
+                    <div class="resumo-highlight">
+                        <div class="number">30</div>
+                        <span>Vagas limitadas na Turma Fundadora</span>
+                    </div>
+                </div>
+
+                <div class="resumo-right">
+                    <h4 class="resumo-right-title">Incluso no Programa</h4>
+                    <ul class="resumo-list">
+                        <li class="resumo-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Formação Presencial de 2 Dias</p>
+                                <small>Janeiro 2026 — São Paulo</small>
+                            </div>
+                        </li>
+                        <li class="resumo-item">
+                            <span>✓</span>
+                            <div>
+                                <p>6 Consultorias Quinzenais</p>
+                                <small>90 dias de acompanhamento</small>
+                            </div>
+                        </li>
+                        <li class="resumo-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Plataforma Brave Completa</p>
+                                <small>Monitoramento 24/7 + Materiais</small>
+                            </div>
+                        </li>
+                        <li class="resumo-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Diagnóstico Brave™ Triplo</p>
+                                <small>Finanças + Operação + Estratégia</small>
+                            </div>
+                        </li>
+                        <li class="resumo-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Plano de 90 Dias + Bônus Turma Fundadora</p>
+                                <small>Sessão Pré-Evento (R$1.500) + Vaga Sócio (R$4.500)</small>
+                            </div>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/message/AJH6V7D5ZH3ND1?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave" target="_blank" class="resumo-button">Quero Ser Analisado →</a>
+                    <p class="resumo-note">Analisamos seu perfil em 48h. Zero compromisso.</p>
+                </div>
+            </div>
+
+            <!-- VERSÃO MOBILE: Pricing Table -->
+            <div class="resumo-pricing animate-on-scroll">
+                <div class="resumo-pricing-card">
+                    <div class="resumo-pricing-header">
+                        <h2>Brave Executive Program</h2>
+                        <p>Turma Fundadora — Janeiro 2026</p>
+                    </div>
+                    <div class="resumo-pricing-body">
+                        <ul class="resumo-pricing-list">
+                            <li class="resumo-pricing-item">
+                                <span>✓</span>
+                                <div>
+                                    <p>Formação Presencial de 2 Dias</p>
+                                    <small>São Paulo — Máximo 30 empresários</small>
+                                </div>
+                            </li>
+                            <li class="resumo-pricing-item">
+                                <span>✓</span>
+                                <div>
+                                    <p>6 Consultorias Quinzenais</p>
+                                    <small>90 dias de acompanhamento individual</small>
+                                </div>
+                            </li>
+                            <li class="resumo-pricing-item">
+                                <span>✓</span>
+                                <div>
+                                    <p>Plataforma Brave Completa</p>
+                                    <small>Monitoramento 24/7 + Materiais</small>
+                                </div>
+                            </li>
+                            <li class="resumo-pricing-item">
+                                <span>✓</span>
+                                <div>
+                                    <p>Diagnóstico Brave™ Triplo</p>
+                                    <small>Finanças + Operação + Estratégia</small>
+                                </div>
+                            </li>
+                            <li class="resumo-pricing-item">
+                                <span>✓</span>
+                                <div>
+                                    <p>Plano de 90 Dias Personalizado</p>
+                                    <small>Construído durante a imersão</small>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="resumo-pricing-bonus">
+                            <span class="resumo-pricing-bonus-label">Bônus Turma Fundadora</span>
+                            <div class="resumo-pricing-bonus-items">
+                                <div class="resumo-pricing-bonus-item">
+                                    <p>Sessão Estratégica Pré-Evento</p>
+                                    <span>R$ 1.500</span>
+                                </div>
+                                <div class="resumo-pricing-bonus-item">
+                                    <p>Vaga para Sócio ou Diretor</p>
+                                    <span>R$ 4.500</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="https://wa.me/message/AJH6V7D5ZH3ND1?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave" target="_blank" class="resumo-pricing-button">Quero Ser Analisado →</a>
+                        <p class="resumo-pricing-note">Analisamos seu perfil em 48h. Zero compromisso.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GARANTIA -->
+    <section class="garantia">
+        <div class="container">
+            <div class="garantia-box">
+                <header class="section-header animate-on-scroll">
+                    <span class="section-label">Zero Risco</span>
+                    <h2 class="section-title">Garantia Tripla Brave</h2>
+                    <p class="section-subtitle">Se você participar e implementar sem ver resultado, devolvemos seu investimento.</p>
+                </header>
+
+                <div class="garantia-grid">
+                    <div class="garantia-item animate-on-scroll delay-1">
+                        <span class="garantia-number">1</span>
+                        <h3 class="garantia-title">Evento (48 horas)</h3>
+                        <p class="garantia-text">Se ao final dos 2 dias você sentir que não vale 10x o investido, devolvemos 100% + hospedagem + passagem.</p>
+                    </div>
+                    <div class="garantia-item animate-on-scroll delay-2">
+                        <span class="garantia-number">2</span>
+                        <h3 class="garantia-title">Implementação (90 dias)</h3>
+                        <p class="garantia-text">Se você participar das consultorias e implementar sem ver clareza total: reembolso 100% + R$ 5.000 pelo seu tempo.</p>
+                    </div>
+                    <div class="garantia-item animate-on-scroll delay-3">
+                        <span class="garantia-number">3</span>
+                        <h3 class="garantia-title">Satisfação Total</h3>
+                        <p class="garantia-text">Garantia de reembolso ou ajustes até sua satisfação completa. Sem letras miúdas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- URGÊNCIA - POR QUE NÃO DEIXAR PARA PRÓXIMA TURMA -->
+    <section class="urgencia">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <h2 class="section-title section-title--dark">Por que não deixar para a próxima turma?</h2>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Somente esta turma terá <strong style="color: var(--accent-gold);">90 dias de consultoria de implementação</strong> incluídos. Exclusivo para a Turma Fundadora.</p>
+            </header>
+
+            <div class="urgencia-content animate-on-scroll">
+                <div class="urgencia-grid">
+                    <div class="urgencia-item">
+                        <span class="urgencia-number">R$ 30k</span>
+                        <p>É o que uma empresa mal gerida perde em média por mês. Esperar 3 meses custa R$ 90k.</p>
+                    </div>
+                    <div class="urgencia-item">
+                        <span class="urgencia-number">90 dias</span>
+                        <p>Tempo para implementar o sistema completo. Quem começa em Janeiro, termina em Abril.</p>
+                    </div>
+                    <div class="urgencia-item">
+                        <span class="urgencia-number">30 vagas</span>
+                        <p>Turma pequena = atenção individual. Próxima turma só no segundo semestre.</p>
+                    </div>
+                </div>
+
+                <!-- BÔNUS EXCLUSIVOS - BENTO BOX -->
+                <div class="bonus-section">
+                    <div class="bento-grid">
+                        <div class="bento-header">
+                            <h3>Bônus Exclusivos para a Turma Fundadora</h3>
+                            <p>Não serão oferecidos nas próximas turmas</p>
+                        </div>
+                        <div class="bento-card">
+                            <span class="bento-number">01</span>
+                            <h4>Sessão Estratégica Pré-Evento</h4>
+                            <p>1 hora de diagnóstico individual com um consultor Brave antes do evento. Você chega sabendo exatamente onde estão os maiores vazamentos.</p>
+                            <div class="bento-value">R$ 1.500</div>
+                        </div>
+                        <div class="bento-card">
+                            <span class="bento-number">02</span>
+                            <h4>Vaga para Convidado</h4>
+                            <p>Traga seu sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação.</p>
+                            <div class="bento-value">R$ 4.500</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="urgencia-quote">
+                    <p>"O melhor momento para arrumar a gestão era há 2 anos. O segundo melhor momento é agora."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 OPÇÕES - ESTILO Q&A -->
+    <section class="opcoes">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-label">Momento de decidir</span>
+                <h2 class="section-title section-title--dark">Você tem 3 opções agora</h2>
+            </header>
+
+            <div class="opcoes-qa animate-on-scroll">
+                <div class="qa-question">
+                    <h3>O que você vai fazer com essa informação?</h3>
+                    <p>Escolha uma das opções abaixo:</p>
+                </div>
+
+                <div class="qa-answers">
+                    <div class="qa-answer">
+                        <div class="qa-radio"></div>
+                        <div class="qa-text">
+                            <h4>Continuar como está</h4>
+                            <p>Seguir trabalhando 60h por semana, sem clareza de números, dependente de você para tudo funcionar.</p>
+                        </div>
+                        <span class="qa-result">Exaustão</span>
+                    </div>
+
+                    <div class="qa-answer">
+                        <div class="qa-radio"></div>
+                        <div class="qa-text">
+                            <h4>Tentar sozinho</h4>
+                            <p>Assistir vídeos, ler livros, fazer cursos online. Funciona para 5% das pessoas.</p>
+                        </div>
+                        <span class="qa-result">6-12 meses</span>
+                    </div>
+
+                    <div class="qa-answer selected">
+                        <div class="qa-radio"></div>
+                        <div class="qa-text">
+                            <h4>Implementar com quem já fez</h4>
+                            <p>2 dias de imersão + 90 dias de acompanhamento com especialistas. Sistema validado em 5.000+ empresas.</p>
+                        </div>
+                        <span class="qa-result">Clareza em 90 dias</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="opcoes-cta animate-on-scroll">
+                <a href="#aplicar" class="opcoes-button">Escolher Opção 3</a>
+            </div>
+
+            <div class="opcoes-ps animate-on-scroll">
+                <p><strong>P.S.:</strong> Se você leu até aqui, não é por acaso. A maioria desiste no meio da página. Você não.</p>
+                <p><strong>P.P.S.:</strong> Turma de Janeiro tem 30 vagas. Quando acabar, só no segundo semestre. A decisão é sua.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <span class="section-label">Dúvidas</span>
+                <h2 class="section-title">Perguntas Frequentes</h2>
+            </header>
+
+            <div class="faq-list">
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Quanto custa o programa?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>O investimento é apresentado durante a conversa de alinhamento, após análise do seu perfil. Trabalhamos com condições especiais para a Turma Fundadora de Janeiro 2026.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Onde e quando será o evento?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>São Paulo - SP, em Janeiro de 2026. A localização exata será informada após confirmação da inscrição. Turma Fundadora com vagas limitadas a 30 empresários.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Posso levar meu sócio ou diretor?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sim. Você tem direito a uma vaga adicional para sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Serve para o meu segmento?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Já atendemos 40+ segmentos diferentes (varejo, serviços, indústria, saúde, tech). O método é universal, o plano é 100% personalizado para sua realidade.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Preciso ter um financeiro estruturado para participar?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Não. Na verdade, a maioria dos empresários chega sem estrutura financeira clara. Parte do programa é justamente construir essa estrutura junto com você.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Qual o formato das consultorias pós-evento?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>São 6 sessões individuais online (1h cada), quinzenais, ao longo de 90 dias. Você tem um consultor dedicado acompanhando sua implementação.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        E se eu não conseguir ir nos dois dias presenciais?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>A presença nos dois dias é obrigatória. Se surgir um imprevisto, você pode transferir sua vaga para a próxima turma sem custo adicional.</p>
+                    </div>
+                </div>
+                <div class="faq-item animate-on-scroll">
+                    <div class="faq-question">
+                        Como funciona a garantia?
+                        <span class="faq-icon"></span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Se ao final do primeiro dia você não enxergar valor, devolvemos 100% do investimento + custos de deslocamento. Sem perguntas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="cta-content animate-on-scroll">
+            <span class="cta-badge">Turma Janeiro 2026</span>
+            <h2 class="cta-title">30 vagas. <em>Uma análise antes de confirmar.</em></h2>
+            <p class="cta-text">Não vendemos para todo mundo. Fazemos análise de perfil porque queremos empresários comprometidos com implementação, não plateia buscando mais um evento.</p>
+
+            <!-- Condição Turma Fundadora -->
+            <div class="promo-box">
+                <span class="promo-label">Turma Fundadora</span>
+                <p class="promo-text">Condição exclusiva para os primeiros 30 empresários. Investimento diferenciado + bônus exclusivos que não serão oferecidos nas próximas turmas.</p>
+            </div>
+
+            <a href="https://wa.me/message/AJH6V7D5ZH3ND1?text=Gostaria%20de%20mais%20informa%C3%A7%C3%B5es%20sobre%20a%20Forma%C3%A7%C3%A3o%20Executiva%20da%20Brave" target="_blank" class="cta-button">
+                Quero Ser Analisado
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </a>
+
+            <div class="cta-footer">
+                <p>Você preenche → analisamos seu perfil em 48h → agendamos conversa → você decide se faz sentido. Zero pressão. Zero risco.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-brand">Brave Educação Empresarial</p>
+        <p class="footer-copy">© 2026. Transformando empresários em líderes estratégicos.</p>
+    </footer>
+
+    <script>
+        // Scroll Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const wasActive = item.classList.contains('active');
+
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                // Open clicked if wasn't active
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Carousel Eventos
+        const slidesWrapper = document.getElementById('eventosSlides');
+        const dots = document.querySelectorAll('.carousel-dot');
+        const prevBtn = document.getElementById('prevSlide');
+        const nextBtn = document.getElementById('nextSlide');
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function goToSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentSlide = index;
+            slidesWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+        nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => goToSlide(parseInt(dot.dataset.slide)));
+        });
+
+        // Auto-play carousel
+        setInterval(() => goToSlide(currentSlide + 1), 5000);
+    </script>
+
+</body>
+
+</html>
