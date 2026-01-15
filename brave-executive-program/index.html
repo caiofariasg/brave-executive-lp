@@ -1113,9 +1113,9 @@
 
         /* ===== TRIPLO PAPEL (CEO/CFO/COO) ===== */
         .triplo-papel {
-            background: var(--blue-primary);
+            background: #f8f9fa;
             padding: var(--section-padding) 0;
-            color: var(--text-on-dark);
+            color: var(--blue-dark);
         }
 
         .triplo-grid {
@@ -1130,17 +1130,18 @@
             display: flex;
             align-items: center;
             gap: 1.5rem;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 0.75rem;
             padding: 1.5rem 2rem;
             transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .triplo-card:hover {
             border-color: var(--accent-gold);
             transform: translateX(8px);
-            background: rgba(255, 255, 255, 0.06);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
         }
 
         .triplo-role {
@@ -1166,14 +1167,14 @@
             font-family: 'Inter', sans-serif;
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--text-on-dark);
+            color: var(--blue-dark);
             margin-bottom: 0.25rem;
         }
 
         .triplo-desc {
             font-family: var(--font-body);
             font-size: 0.9rem;
-            color: var(--text-on-dark-muted);
+            color: #64748b;
             line-height: 1.5;
         }
 
@@ -1181,11 +1182,12 @@
             text-align: center;
             margin-top: 3rem;
             padding: 1.5rem 2rem;
-            background: rgba(234, 202, 45, 0.1);
+            background: var(--blue-dark);
             border-radius: 0.5rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            color: #ffffff;
         }
 
         .triplo-footer p {
@@ -1950,9 +1952,9 @@
     <section class="triplo-papel">
         <div class="container">
             <header class="section-header animate-on-scroll">
-                <h2 class="section-title section-title--dark">Hoje, não dá mais para ser <span
+                <h2 class="section-title" style="color: var(--blue-dark);">Hoje, não dá mais para ser <span
                         style="color: var(--accent-gold);">só DONO</span></h2>
-                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Você precisa dominar 3 papéis para
+                <p class="section-subtitle" style="color: #64748b;">Você precisa dominar 3 papéis para
                     crescer com controle</p>
             </header>
 
