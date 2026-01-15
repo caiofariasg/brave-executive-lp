@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase - Seção 3 Opções</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-primary: #1e3a5f;
+            --blue-dark: #0f1c2f;
+            --yellow-primary: #eaca2d;
+            --accent-gold: #d4af37;
+            --text-on-dark: #ffffff;
+            --text-on-dark-muted: rgba(255,255,255,0.7);
+            --bg-light: #f8fafc;
+            --text-secondary: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2rem;
+        }
+
+        .showcase-section {
+            margin-bottom: 4rem;
+            padding: 3rem;
+            background: var(--blue-primary);
+            border-radius: 1rem;
+        }
+
+        .showcase-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* ===== OPÇÃO 1: Cards Horizontais com Destaque ===== */
+        .opcoes-horizontal {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .opcao-h {
+            display: grid;
+            grid-template-columns: 60px 1fr auto;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .opcao-h:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .opcao-h.destaque {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .opcao-h.destaque * {
+            color: var(--blue-dark) !important;
+        }
+
+        .opcao-h-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            opacity: 0.5;
+        }
+
+        .opcao-h-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .opcao-h-content p {
+            font-size: 0.875rem;
+            color: var(--text-on-dark-muted);
+        }
+
+        .opcao-h-result {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            background: rgba(255,255,255,0.1);
+            color: var(--text-on-dark-muted);
+        }
+
+        .opcao-h.destaque .opcao-h-result {
+            background: var(--blue-dark);
+            color: var(--accent-gold);
+        }
+
+        /* ===== OPÇÃO 2: Timeline Vertical ===== */
+        .opcoes-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .opcoes-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, #e74c3c, #f39c12, #27ae60);
+            border-radius: 2px;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 0.5rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 1.5rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 3px solid var(--blue-primary);
+        }
+
+        .timeline-item.bad::before { background: #e74c3c; }
+        .timeline-item.mid::before { background: #f39c12; }
+        .timeline-item.good::before { background: #27ae60; }
+
+        .timeline-item.good {
+            background: rgba(39, 174, 96, 0.15);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+        }
+
+        .timeline-label {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-item.bad .timeline-label { color: #e74c3c; }
+        .timeline-item.mid .timeline-label { color: #f39c12; }
+        .timeline-item.good .timeline-label { color: #27ae60; }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            font-size: 0.875rem;
+            color: var(--text-on-dark-muted);
+        }
+
+        /* ===== OPÇÃO 3: Cards Minimalistas ===== */
+        .opcoes-minimal {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .minimal-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+        }
+
+        .minimal-card.best {
+            background: rgba(39, 174, 96, 0.1);
+            border-color: rgba(39, 174, 96, 0.3);
+        }
+
+        .minimal-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .minimal-title {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .minimal-desc {
+            font-size: 0.8rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.5;
+        }
+
+        /* ===== OPÇÃO 4: Comparativo Side-by-Side ===== */
+        .opcoes-compare {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .compare-left {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .compare-item {
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .compare-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .compare-item.bad .compare-icon { background: rgba(231, 76, 60, 0.2); }
+        .compare-item.mid .compare-icon { background: rgba(243, 156, 18, 0.2); }
+
+        .compare-right {
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f4d03f 100%);
+            border-radius: 1rem;
+            color: var(--blue-dark);
+            text-align: center;
+        }
+
+        .compare-right h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .compare-right p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .compare-badge {
+            display: inline-block;
+            background: var(--blue-dark);
+            color: var(--accent-gold);
+            padding: 0.5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        /* ===== OPÇÃO 5: Lista Simples com Ícones ===== */
+        .opcoes-lista {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .lista-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .lista-item:last-child {
+            border-bottom: none;
+        }
+
+        .lista-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .lista-item.bad .lista-icon { background: #e74c3c; }
+        .lista-item.mid .lista-icon { background: #f39c12; }
+        .lista-item.good .lista-icon { background: #27ae60; }
+
+        .lista-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .lista-content p {
+            font-size: 0.85rem;
+            color: var(--text-on-dark-muted);
+        }
+
+        /* ===== OPÇÃO 6: Bento Box Assimétrico ===== */
+        .opcoes-bento {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+
+        .bento-opcao {
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .bento-opcao.small {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .bento-opcao.big {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-primary) 100%);
+            border: 2px solid var(--accent-gold);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .bento-num {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-opcao h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-opcao p {
+            font-size: 0.85rem;
+            color: var(--text-on-dark-muted);
+        }
+
+        .bento-opcao.big h4 {
+            font-size: 1.25rem;
+            color: var(--accent-gold);
+        }
+
+        .bento-opcao.big p {
+            color: var(--text-on-dark);
+        }
+
+        .bento-result {
+            text-align: center;
+        }
+
+        .bento-result-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-result-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        /* ===== OPÇÃO 7: Estilo Pergunta/Resposta ===== */
+        .opcoes-qa {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .qa-question {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .qa-question h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .qa-question p {
+            color: var(--text-on-dark-muted);
+        }
+
+        .qa-answers {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .qa-answer {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .qa-answer:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .qa-answer.selected {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .qa-answer.selected * {
+            color: var(--blue-dark) !important;
+        }
+
+        .qa-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .qa-answer.selected .qa-radio {
+            background: var(--blue-dark);
+            border-color: var(--blue-dark);
+        }
+
+        .qa-text h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .qa-text p {
+            font-size: 0.8rem;
+            color: var(--text-on-dark-muted);
+            margin-top: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .opcoes-minimal,
+            .opcoes-compare {
+                grid-template-columns: 1fr;
+            }
+            .bento-opcao.big {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Showcase: Seção "3 Opções"</h1>
+
+    <!-- OPÇÃO 1 -->
+    <div class="showcase-section">
+        <h2 class="showcase-title">Opção 1: Cards Horizontais com Destaque</h2>
+        <div class="container">
+            <div class="opcoes-horizontal">
+                <div class="opcao-h">
+                    <span class="opcao-h-num">1</span>
+                    <div class="opcao-h-content">
+                        <h3>Continuar como está</h3>
+                        <p>Seguir trabalhando 60h por semana, sem clareza de números, dependente de você.</p>
+                    </div>
+                    <span class="opcao-h-result">Exaustão garantida</span>
+                </div>
+                <div class="opcao-h">
+                    <span class="opcao-h-num">2</span>
+                    <div class="opcao-h-content">
+                        <h3>Tentar sozinho</h3>
+                        <p>YouTube, livros, cursos online. Funciona para 5% das pessoas.</p>
+                    </div>
+                    <span class="opcao-h-result">6-12 meses perdidos</span>
+                </div>
+                <div class="opcao-h destaque">
+                    <span class="opcao-h-num">3</span>
+                    <div class="opcao-h-content">
+                        <h3>Implementar com quem já fez</h3>
+                        <p>2 dias + 90 dias de acompanhamento. Sistema validado em 5.000+ empresas.</p>
+                    </div>
+                    <span class="opcao-h-result">Clareza em 90 dias</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 2 -->
+    <div class="showcase-section">
+        <h2 class="showcase-title">Opção 2: Timeline Vertical</h2>
+        <div class="container">
+            <div class="opcoes-timeline">
+                <div class="timeline-item bad">
+                    <span class="timeline-label">Opção 1</span>
+                    <h3 class="timeline-title">Continuar como está</h3>
+                    <p class="timeline-desc">Seguir trabalhando 60h por semana. Daqui a 1 ano, mesma situação. Resultado: Exaustão garantida.</p>
+                </div>
+                <div class="timeline-item mid">
+                    <span class="timeline-label">Opção 2</span>
+                    <h3 class="timeline-title">Tentar sozinho</h3>
+                    <p class="timeline-desc">YouTube, livros, cursos online. Funciona para 5%. Resultado: 6-12 meses perdidos.</p>
+                </div>
+                <div class="timeline-item good">
+                    <span class="timeline-label">Opção 3 - Recomendada</span>
+                    <h3 class="timeline-title">Implementar com quem já fez</h3>
+                    <p class="timeline-desc">2 dias de imersão + 90 dias de acompanhamento. Sistema validado. Resultado: Clareza em 90 dias.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 3 -->
+    <div class="showcase-section">
+        <h2 class="showcase-title">Opção 3: Cards Minimalistas com Emoji</h2>
+        <div class="container">
+            <div class="opcoes-minimal">
+                <div class="minimal-card">
+                    <div class="minimal-emoji">😩</div>
+                    <h3 class="minimal-title">Continuar como está</h3>
+                    <p class="minimal-desc">60h por semana. Sem clareza. Daqui a 1 ano, mesma situação.</p>
+                </div>
+                <div class="minimal-card">
+                    <div class="minimal-emoji">🤷</div>
+                    <h3 class="minimal-title">Tentar sozinho</h3>
+                    <p class="minimal-desc">YouTube, livros, cursos. Funciona para 5% das pessoas.</p>
+                </div>
+                <div class="minimal-card best">
+                    <div class="minimal-emoji">🚀</div>
+                    <h3 class="minimal-title">Implementar com suporte</h3>
+                    <p class="minimal-desc">Sistema validado em 5.000+ empresas. Clareza em 90 dias.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 4 -->
+    <div class="showcase-section">
+        <h2 class="showcase-title">Opção 4: Comparativo Side-by-Side</h2>
+        <div class="container">
+            <div class="opcoes-compare">
+                <div class="compare-left">
+                    <div class="compare-item bad">
+                        <div class="compare-icon">😩</div>
+                        <div>
+                            <strong>Continuar como está</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-on-dark-muted);">Exaustão garantida</p>
+                        </div>
+                    </div>
+                    <div class="compare-item mid">
+                        <div class="compare-icon">🤷</div>
+                        <div>
+                            <strong>Tentar sozinho</strong>
+                            <p style="font-size: 0.8rem; color: var(--text-on-dark-muted);">6-12 meses perdidos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="compare-right">
+                    <h3>Implementar com quem já fez</h3>
+                    <p>2 dias de imersão + 90 dias de acompanhamento com especialistas que já transformaram 5.000+ empresas.</p>
+                    <span class="compare-badge">Clareza em 90 dias</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 5 -->
+    <div class="showcase-section">
+        <h2 class="showcase-title">Opção 5: Lista Simples com Ícones</h2>
+        <div class="container">
+            <div class="opcoes-lista">
+                <div class="lista-item bad">
+                    <div class="lista-icon">✗</div>
+                    <div class="lista-content">
+                        <h4>Continuar como está</h4>
+                        <p>60h por semana, sem clareza de números. Daqui a 1 ano, mesma situação. Exaustão garantida.</p>
+                    </div>
+                </div>
+                <div class="lista-item mid">
+                    <div class="lista-icon">?</div>
+                    <div class="lista-content">
+                        <h4>Tentar sozinho</h4>
+                        <p>YouTube, livros, cursos online. Funciona para 5% das pessoas. 6-12 meses de tentativa e erro.</p>
+                    </div>
+                </div>
+                <div class="lista-item good">
+                    <div class="lista-icon">✓</div>
+                    <div class="lista-content">
+                        <h4>Implementar com quem já fez</h4>
+                        <p>2 dias + 90 dias de acompanhamento. Sistema validado em 5.000+ empresas. Clareza em 90 dias.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 6 -->
+    <div class="showcase-section">
+        <h2 class="showcase-title">Opção 6: Bento Box Assimétrico</h2>
+        <div class="container">
+            <div class="opcoes-bento">
+                <div class="bento-opcao small">
+                    <span class="bento-num">01</span>
+                    <h4>Continuar como está</h4>
+                    <p>60h por semana. Sem clareza. Exaustão garantida.</p>
+                </div>
+                <div class="bento-opcao small">
+                    <span class="bento-num">02</span>
+                    <h4>Tentar sozinho</h4>
+                    <p>YouTube, livros. Funciona para 5%. 6-12 meses perdidos.</p>
+                </div>
+                <div class="bento-opcao big">
+                    <div>
+                        <span class="bento-num">03</span>
+                        <h4>Implementar com quem já fez</h4>
+                        <p>2 dias de imersão + 90 dias de acompanhamento com especialistas que já transformaram 5.000+ empresas.</p>
+                    </div>
+                    <div class="bento-result">
+                        <p class="bento-result-label">Resultado</p>
+                        <p class="bento-result-value">Clareza em 90 dias</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 7 -->
+    <div class="showcase-section">
+        <h2 class="showcase-title">Opção 7: Estilo Pergunta/Resposta</h2>
+        <div class="container">
+            <div class="opcoes-qa">
+                <div class="qa-question">
+                    <h3>O que você vai fazer agora?</h3>
+                    <p>Você tem 3 caminhos. Qual faz mais sentido para você?</p>
+                </div>
+                <div class="qa-answers">
+                    <div class="qa-answer">
+                        <div class="qa-radio"></div>
+                        <div class="qa-text">
+                            <h4>Continuar como está</h4>
+                            <p>60h por semana, sem clareza. Resultado: exaustão garantida.</p>
+                        </div>
+                    </div>
+                    <div class="qa-answer">
+                        <div class="qa-radio"></div>
+                        <div class="qa-text">
+                            <h4>Tentar sozinho</h4>
+                            <p>YouTube, livros, cursos. Resultado: 6-12 meses perdidos.</p>
+                        </div>
+                    </div>
+                    <div class="qa-answer selected">
+                        <div class="qa-radio"></div>
+                        <div class="qa-text">
+                            <h4>Implementar com quem já fez</h4>
+                            <p>Sistema validado em 5.000+ empresas. Resultado: clareza em 90 dias.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

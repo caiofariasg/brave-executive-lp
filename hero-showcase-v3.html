@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hero Showcase V3 - Minimal/Bold + Foto Real</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Sora:wght@300;400;500;600;700;800&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            background: #f5f5f5;
+        }
+
+        .showcase-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            padding: 1rem 2rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .showcase-nav a {
+            padding: 0.5rem 1rem;
+            background: #0f1c2f;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .showcase-nav a:hover {
+            background: #eaca2d;
+            color: #0f1c2f;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            scroll-margin-top: 80px;
+            position: relative;
+        }
+
+        .hero-label {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 0.5rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            z-index: 10;
+        }
+
+        /* ========== HERO 1: Minimal + Foto Direita (Inter) ========== */
+        #hero1 {
+            background: #0f1c2f;
+        }
+
+        #hero1 .content-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 5rem;
+            color: #fff;
+        }
+
+        #hero1 .photo-side {
+            flex: 0 0 42%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero1 .photo-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        #hero1 .photo-side::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 120px;
+            background: linear-gradient(90deg, #0f1c2f, transparent);
+            z-index: 1;
+        }
+
+        #hero1 .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #eaca2d;
+            margin-bottom: 2rem;
+        }
+
+        #hero1 h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+        }
+
+        #hero1 h1 span {
+            color: #eaca2d;
+        }
+
+        #hero1 p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 2.5rem;
+            max-width: 480px;
+            line-height: 1.7;
+        }
+
+        #hero1 .cta {
+            display: inline-block;
+            background: #eaca2d;
+            color: #0f1c2f;
+            padding: 1rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        /* ========== HERO 2: Bold Statement + Foto BG sutil (Sora) ========== */
+        #hero2 {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero2 .bg-photo {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        #hero2 .bg-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+            opacity: 0.35;
+        }
+
+        #hero2 .bg-photo::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 70%;
+            background: linear-gradient(90deg, #1a1a2e, transparent);
+            z-index: 2;
+        }
+
+        #hero2 .content {
+            position: relative;
+            z-index: 3;
+            max-width: 700px;
+            padding: 6rem 5rem;
+            color: #fff;
+        }
+
+        #hero2 h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(3rem, 7vw, 5rem);
+            font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        #hero2 h1 span {
+            display: block;
+            color: #eaca2d;
+            font-size: 0.45em;
+            font-weight: 400;
+            text-transform: none;
+            letter-spacing: 0;
+            margin-top: 0.75rem;
+        }
+
+        #hero2 .stats {
+            display: flex;
+            gap: 3rem;
+            margin: 2.5rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        #hero2 .stat-item strong {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+        }
+
+        #hero2 .stat-item span {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        #hero2 .cta {
+            display: inline-block;
+            background: #eaca2d;
+            color: #1a1a2e;
+            padding: 1.1rem 2.5rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* ========== HERO 3: Minimal Centered + Foto Lado (Inter) ========== */
+        #hero3 {
+            background: #0a0a0a;
+        }
+
+        #hero3 .content-side {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 3rem;
+            color: #fff;
+        }
+
+        #hero3 .content-side .inner {
+            max-width: 550px;
+        }
+
+        #hero3 .photo-side {
+            flex: 0 0 38%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #hero3 .photo-side img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        #hero3 .photo-side::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 100px;
+            background: linear-gradient(90deg, #0a0a0a, transparent);
+            z-index: 1;
+        }
+
+        #hero3 .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.6rem;
+            font-weight: 500;
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            color: #eaca2d;
+            margin-bottom: 2rem;
+        }
+
+        #hero3 h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 300;
+            line-height: 1.3;
+            margin-bottom: 1.5rem;
+        }
+
+        #hero3 h1 strong {
+            font-weight: 700;
+            color: #eaca2d;
+        }
+
+        #hero3 p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        #hero3 .cta {
+            display: inline-block;
+            background: transparent;
+            color: #fff;
+            padding: 1rem 2rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.8rem;
+            text-decoration: none;
+            border: 1px solid rgba(255,255,255,0.25);
+            letter-spacing: 0.1em;
+            transition: all 0.3s;
+        }
+
+        #hero3 .cta:hover {
+            background: #eaca2d;
+            border-color: #eaca2d;
+            color: #0a0a0a;
+        }
+
+        /* ========== HERO 4: Bold Full Width + Foto Overlay (Sora) ========== */
+        #hero4 {
+            position: relative;
+            background: #0f1c2f;
+        }
+
+        #hero4 .bg-full {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+        }
+
+        #hero4 .bg-full img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        #hero4 .bg-full::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, rgba(15,28,47,0.97) 0%, rgba(15,28,47,0.85) 40%, rgba(15,28,47,0.6) 100%);
+        }
+
+        #hero4 .content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            padding: 6rem 5rem;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        #hero4 h1 {
+            font-family: 'Sora', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        #hero4 h1 span {
+            color: #eaca2d;
+        }
+
+        #hero4 p {
+            font-family: 'Red Hat Display', sans-serif;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+            max-width: 500px;
+        }
+
+        #hero4 .stats {
+            display: flex;
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        #hero4 .stat strong {
+            display: block;
+            font-family: 'Sora', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        #hero4 .stat span {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        #hero4 .cta {
+            display: inline-block;
+            background: #eaca2d;
+            color: #0f1c2f;
+            padding: 1.1rem 2.5rem;
+            font-family: 'Sora', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+            width: fit-content;
+        }
+
+        /* ========== HERO 5: Minimal + Card Foto Flutuante (Inter) ========== */
+        #hero5 {
+            background: linear-gradient(180deg, #080808 0%, #111 100%);
+            padding: 5rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        #hero5 .content {
+            flex: 1;
+            max-width: 550px;
+            color: #fff;
+        }
+
+        #hero5 .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: #eaca2d;
+            margin-bottom: 2rem;
+        }
+
+        #hero5 h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        #hero5 h1 span {
+            color: #eaca2d;
+        }
+
+        #hero5 p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        #hero5 .cta {
+            display: inline-block;
+            background: #eaca2d;
+            color: #080808;
+            padding: 1rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+
+        #hero5 .photo-card {
+            flex: 0 0 400px;
+            position: relative;
+        }
+
+        #hero5 .photo-card img {
+            width: 100%;
+            height: 520px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        #hero5 .photo-card .name-tag {
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #eaca2d;
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        #hero5 .photo-card .name-tag strong {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #080808;
+        }
+
+        #hero5 .photo-card .name-tag span {
+            font-size: 0.65rem;
+            color: rgba(0,0,0,0.6);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            #hero1, #hero3 {
+                flex-direction: column;
+            }
+            #hero1 .photo-side, #hero3 .photo-side {
+                flex: none;
+                height: 45vh;
+            }
+            #hero1 .content-side, #hero3 .content-side {
+                padding: 3rem 2rem;
+            }
+            #hero2 .content, #hero4 .content {
+                padding: 4rem 2rem;
+                max-width: 100%;
+            }
+            #hero5 {
+                flex-direction: column;
+                padding: 4rem 2rem;
+            }
+            #hero5 .photo-card {
+                flex: none;
+                width: 100%;
+                max-width: 350px;
+            }
+            #hero5 .photo-card img {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="showcase-nav">
+        <a href="#hero1">1. Minimal + Foto</a>
+        <a href="#hero2">2. Bold + BG Foto</a>
+        <a href="#hero3">3. Minimal Centered</a>
+        <a href="#hero4">4. Bold Overlay</a>
+        <a href="#hero5">5. Minimal + Card</a>
+    </nav>
+
+    <!-- HERO 1: Minimal + Foto Direita -->
+    <section id="hero1" class="hero-section">
+        <span class="hero-label">1. MINIMAL + FOTO DIREITA — Inter</span>
+        <div class="content-side">
+            <p class="tag">Brave Executive Program</p>
+            <h1>Transforme Faturamento em <span>Caixa, Lucro e Capital de Giro</span></h1>
+            <p>Formação executiva presencial. 2 dias de imersão + 90 dias de implementação guiada com consultores especializados.</p>
+            <a href="#" class="cta">Solicitar Informações</a>
+        </div>
+        <div class="photo-side">
+            <img src="/Users/caioanderson/Desktop/3H3A0476.jpg" alt="Leonardo Leão">
+        </div>
+    </section>
+
+    <!-- HERO 2: Bold Statement + Foto BG -->
+    <section id="hero2" class="hero-section">
+        <span class="hero-label">2. BOLD + BG FOTO — Sora</span>
+        <div class="bg-photo">
+            <img src="/Users/caioanderson/Desktop/3H3A0476.jpg" alt="Leonardo Leão">
+        </div>
+        <div class="content">
+            <h1>Faturamento → Lucro<span>O sistema que transforma empresas em máquinas de resultado</span></h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <strong>5.000+</strong>
+                    <span>Empresas</span>
+                </div>
+                <div class="stat-item">
+                    <strong>R$ 8bi</strong>
+                    <span>Gerenciados</span>
+                </div>
+                <div class="stat-item">
+                    <strong>40+</strong>
+                    <span>Segmentos</span>
+                </div>
+            </div>
+            <a href="#" class="cta">Solicitar Informações</a>
+        </div>
+    </section>
+
+    <!-- HERO 3: Minimal Centered + Foto Lado -->
+    <section id="hero3" class="hero-section">
+        <span class="hero-label">3. MINIMAL CENTERED — Inter Light</span>
+        <div class="content-side">
+            <div class="inner">
+                <p class="tag">Brave Executive Program</p>
+                <h1>Transforme Faturamento em <strong>Caixa, Lucro e Capital de Giro</strong></h1>
+                <p>Formação executiva presencial. 2 dias de imersão + 90 dias de implementação guiada.</p>
+                <a href="#" class="cta">Solicitar Informações</a>
+            </div>
+        </div>
+        <div class="photo-side">
+            <img src="/Users/caioanderson/Desktop/3H3A0476.jpg" alt="Leonardo Leão">
+        </div>
+    </section>
+
+    <!-- HERO 4: Bold Full Width + Foto Overlay -->
+    <section id="hero4" class="hero-section">
+        <span class="hero-label">4. BOLD OVERLAY — Sora</span>
+        <div class="bg-full">
+            <img src="/Users/caioanderson/Desktop/3H3A0476.jpg" alt="Leonardo Leão">
+        </div>
+        <div class="content">
+            <h1>Faturamento → <span>Lucro Real</span></h1>
+            <p>O sistema de controle financeiro e operacional usado pelas empresas que mais crescem no Brasil.</p>
+            <div class="stats">
+                <div class="stat">
+                    <strong>5.000+</strong>
+                    <span>Empresas</span>
+                </div>
+                <div class="stat">
+                    <strong>R$ 8bi</strong>
+                    <span>Gerenciados</span>
+                </div>
+                <div class="stat">
+                    <strong>40+</strong>
+                    <span>Segmentos</span>
+                </div>
+            </div>
+            <a href="#" class="cta">Solicitar Informações</a>
+        </div>
+    </section>
+
+    <!-- HERO 5: Minimal + Card Foto Flutuante -->
+    <section id="hero5" class="hero-section">
+        <span class="hero-label">5. MINIMAL + CARD FOTO — Inter</span>
+        <div class="content">
+            <p class="tag">Brave Executive Program</p>
+            <h1>Transforme Faturamento em <span>Caixa, Lucro e Capital de Giro</span></h1>
+            <p>Formação executiva presencial. 2 dias de imersão + 90 dias de implementação guiada com consultores especializados.</p>
+            <a href="#" class="cta">Solicitar Informações</a>
+        </div>
+        <div class="photo-card">
+            <img src="/Users/caioanderson/Desktop/3H3A0476.jpg" alt="Leonardo Leão">
+            <div class="name-tag">
+                <strong>Leonardo Leão</strong>
+                <span>CEO Brave Educação</span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

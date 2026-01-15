@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase: O Que Você Recebe no Programa - 10 Opções</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Red+Hat+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-primary: #2b2d42;
+            --blue-dark: #0f1c2f;
+            --yellow-primary: #eaca2d;
+            --accent-gold: #eaca2d;
+            --text-muted: #8d99ae;
+            --bg-light: #edf2f4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Red Hat Display', sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .option {
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: var(--blue-dark);
+            border-radius: 1rem;
+        }
+
+        .option-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ===== OPÇÃO 1: Card Branco Centralizado (Atual) ===== */
+        .op1-box {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 0.75rem;
+            padding: 3rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        }
+
+        .op1-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--blue-primary);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .op1-list {
+            list-style: none;
+        }
+
+        .op1-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .op1-item:last-child {
+            border-bottom: none;
+        }
+
+        .op1-check {
+            flex-shrink: 0;
+            width: 24px;
+            height: 24px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-dark);
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+
+        .op1-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin: 0 0 0.25rem 0;
+        }
+
+        .op1-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        .op1-divider {
+            border: none;
+            border-top: 2px dashed var(--accent-gold);
+            margin: 1.5rem 0;
+        }
+
+        .op1-bonus-label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .op1-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .op1-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        .op1-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== OPÇÃO 2: Duas Colunas ===== */
+        .op2-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .op2-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .op2-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .op2-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .op2-column {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.75rem;
+            padding: 2rem;
+        }
+
+        .op2-column-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .op2-item {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .op2-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .op2-icon {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+        }
+
+        .op2-text h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .op2-text p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .op2-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .op2-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        /* ===== OPÇÃO 3: Bento Grid ===== */
+        .op3-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .op3-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .op3-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .op3-bento {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: 1rem;
+        }
+
+        .op3-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+        }
+
+        .op3-card.featured {
+            grid-column: span 2;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+        }
+
+        .op3-card.featured h4,
+        .op3-card.featured p {
+            color: var(--blue-dark);
+        }
+
+        .op3-card.cta-card {
+            grid-column: span 3;
+            background: var(--blue-primary);
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .op3-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .op3-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .op3-card .number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            opacity: 0.3;
+            margin-bottom: 0.5rem;
+        }
+
+        .op3-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1rem 2.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        /* ===== OPÇÃO 4: Timeline Vertical ===== */
+        .op4-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .op4-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .op4-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .op4-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .op4-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--accent-gold), rgba(234,202,45,0.2));
+        }
+
+        .op4-item {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.03);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .op4-item::before {
+            content: '✓';
+            position: absolute;
+            left: -2.5rem;
+            top: 1.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+        }
+
+        .op4-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .op4-item p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .op4-bonus {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(234,202,45,0.1);
+            border: 1px solid rgba(234,202,45,0.3);
+            border-radius: 0.5rem;
+        }
+
+        .op4-bonus-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .op4-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .op4-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        /* ===== OPÇÃO 5: Cards Horizontais ===== */
+        .op5-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .op5-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .op5-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .op5-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .op5-card {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            padding: 1.25rem 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+            transition: all 0.3s;
+        }
+
+        .op5-card:hover {
+            background: rgba(255,255,255,0.06);
+            border-color: var(--accent-gold);
+        }
+
+        .op5-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            opacity: 0.5;
+            min-width: 2rem;
+        }
+
+        .op5-content {
+            flex: 1;
+        }
+
+        .op5-content h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .op5-content p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .op5-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            background: rgba(234,202,45,0.1);
+            padding: 0.35rem 0.75rem;
+            border-radius: 2rem;
+        }
+
+        .op5-divider {
+            text-align: center;
+            padding: 1rem 0;
+            color: var(--accent-gold);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .op5-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .op5-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        /* ===== OPÇÃO 6: Checklist Minimalista ===== */
+        .op6-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .op6-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .op6-header p {
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 2.5rem;
+        }
+
+        .op6-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .op6-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border-left: 3px solid var(--accent-gold);
+        }
+
+        .op6-item span {
+            color: var(--accent-gold);
+            font-size: 1.25rem;
+        }
+
+        .op6-item p {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #fff;
+            margin: 0;
+        }
+
+        .op6-bonus-section {
+            padding: 2rem;
+            background: rgba(234,202,45,0.05);
+            border: 1px dashed var(--accent-gold);
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .op6-bonus-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .op6-bonus-items {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .op6-bonus-item {
+            text-align: center;
+        }
+
+        .op6-bonus-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .op6-bonus-item small {
+            color: var(--accent-gold);
+        }
+
+        .op6-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        /* ===== OPÇÃO 7: Estilo Pricing Table ===== */
+        .op7-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .op7-card {
+            background: linear-gradient(145deg, #1a2744, #0f1c2f);
+            border: 2px solid var(--accent-gold);
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .op7-header {
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .op7-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.25rem;
+        }
+
+        .op7-header p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .op7-body {
+            padding: 2rem;
+        }
+
+        .op7-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .op7-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .op7-item:last-child {
+            border-bottom: none;
+        }
+
+        .op7-item span {
+            color: var(--accent-gold);
+        }
+
+        .op7-item p {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .op7-item small {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .op7-bonus {
+            background: rgba(234,202,45,0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .op7-bonus-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .op7-bonus-items {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .op7-bonus-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+
+        .op7-bonus-item span {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+
+        .op7-button {
+            display: block;
+            width: 100%;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+
+        .op7-note {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ===== OPÇÃO 8: Icons Grid ===== */
+        .op8-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .op8-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .op8-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .op8-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .op8-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.75rem;
+        }
+
+        .op8-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .op8-item h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .op8-item p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .op8-bonus-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .op8-bonus-card {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            background: rgba(234,202,45,0.1);
+            border: 1px solid rgba(234,202,45,0.3);
+            border-radius: 0.5rem;
+        }
+
+        .op8-bonus-card .icon {
+            font-size: 1.5rem;
+        }
+
+        .op8-bonus-card h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .op8-bonus-card small {
+            color: var(--accent-gold);
+        }
+
+        .op8-cta {
+            text-align: center;
+        }
+
+        .op8-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        /* ===== OPÇÃO 9: Accordion/Expandable ===== */
+        .op9-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .op9-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .op9-header h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .op9-list {
+            margin-bottom: 2rem;
+        }
+
+        .op9-item {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            overflow: hidden;
+        }
+
+        .op9-item-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem;
+            cursor: pointer;
+        }
+
+        .op9-item-header:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .op9-check {
+            width: 28px;
+            height: 28px;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue-dark);
+            font-weight: 700;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+        }
+
+        .op9-item-header h4 {
+            flex: 1;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .op9-item-header .arrow {
+            color: var(--accent-gold);
+            transition: transform 0.3s;
+        }
+
+        .op9-item.open .arrow {
+            transform: rotate(180deg);
+        }
+
+        .op9-item-body {
+            padding: 0 1.25rem 1.25rem 3.75rem;
+            display: none;
+        }
+
+        .op9-item.open .op9-item-body {
+            display: block;
+        }
+
+        .op9-item-body p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.6;
+        }
+
+        .op9-bonus {
+            padding: 1.5rem;
+            background: rgba(234,202,45,0.08);
+            border: 1px dashed var(--accent-gold);
+            border-radius: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .op9-bonus-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .op9-bonus-items {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .op9-bonus-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .op9-bonus-item span {
+            color: var(--accent-gold);
+        }
+
+        .op9-bonus-item p {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .op9-cta {
+            text-align: center;
+        }
+
+        .op9-button {
+            display: inline-block;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem 3rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0.5rem;
+        }
+
+        /* ===== OPÇÃO 10: Split Layout ===== */
+        .op10-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .op10-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        .op10-left {
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 3rem;
+        }
+
+        .op10-left h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .op10-left p {
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .op10-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(0,0,0,0.1);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .op10-highlight .number {
+            font-family: 'Inter', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .op10-highlight span {
+            font-weight: 500;
+        }
+
+        .op10-right {
+            background: var(--blue-primary);
+            padding: 3rem;
+        }
+
+        .op10-right-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-gold);
+            margin-bottom: 1.5rem;
+        }
+
+        .op10-list {
+            margin-bottom: 2rem;
+        }
+
+        .op10-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .op10-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .op10-item span {
+            color: var(--accent-gold);
+        }
+
+        .op10-item p {
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .op10-item small {
+            display: block;
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-top: 0.25rem;
+        }
+
+        .op10-button {
+            display: block;
+            width: 100%;
+            background: var(--accent-gold);
+            color: var(--blue-dark);
+            padding: 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .op2-grid, .op3-bento, .op8-grid, .op10-split {
+                grid-template-columns: 1fr;
+            }
+            .op3-card.featured, .op3-card.cta-card {
+                grid-column: span 1;
+            }
+            .op6-bonus-items, .op8-bonus-row, .op9-bonus-items {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Showcase: "O Que Você Recebe no Programa"</h1>
+    <p class="intro">10 opções diferentes de layout para a seção de resumo/oferta</p>
+
+    <!-- OPÇÃO 1 -->
+    <div class="option">
+        <h3 class="option-title">Opção 1: Card Branco Centralizado (Atual)</h3>
+        <div class="op1-box">
+            <h2 class="op1-title">O Que Você Recebe no Programa:</h2>
+            <ul class="op1-list">
+                <li class="op1-item">
+                    <span class="op1-check">✓</span>
+                    <div class="op1-content">
+                        <h4>Formação Presencial de 2 Dias</h4>
+                        <p>Janeiro 2026, São Paulo — Turma limitada a 30 empresários</p>
+                    </div>
+                </li>
+                <li class="op1-item">
+                    <span class="op1-check">✓</span>
+                    <div class="op1-content">
+                        <h4>6 Consultorias Quinzenais</h4>
+                        <p>Acompanhamento individual por 90 dias pós-evento</p>
+                    </div>
+                </li>
+                <li class="op1-item">
+                    <span class="op1-check">✓</span>
+                    <div class="op1-content">
+                        <h4>Plataforma Brave Completa</h4>
+                        <p>Monitoramento 24/7 da implementação + materiais</p>
+                    </div>
+                </li>
+                <li class="op1-item">
+                    <span class="op1-check">✓</span>
+                    <div class="op1-content">
+                        <h4>Diagnóstico Brave™ Triplo</h4>
+                        <p>Análise completa: Finanças + Operação + Estratégia</p>
+                    </div>
+                </li>
+                <li class="op1-item">
+                    <span class="op1-check">✓</span>
+                    <div class="op1-content">
+                        <h4>Plano de 90 Dias Personalizado</h4>
+                        <p>Construído durante a imersão, com prioridades claras</p>
+                    </div>
+                </li>
+            </ul>
+            <hr class="op1-divider">
+            <span class="op1-bonus-label">Bônus Turma Fundadora:</span>
+            <ul class="op1-list">
+                <li class="op1-item">
+                    <span class="op1-check">✓</span>
+                    <div class="op1-content">
+                        <h4>Sessão Estratégica Pré-Evento</h4>
+                        <p>Valor: R$ 1.500 — Incluso para Turma Fundadora</p>
+                    </div>
+                </li>
+                <li class="op1-item">
+                    <span class="op1-check">✓</span>
+                    <div class="op1-content">
+                        <h4>Vaga para Sócio ou Diretor</h4>
+                        <p>Valor: R$ 4.500 — Incluso para Turma Fundadora</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="op1-cta">
+                <a href="#" class="op1-button">Quero Ser Analisado →</a>
+                <p class="op1-note">Analisamos seu perfil em 48h. Zero compromisso.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 2 -->
+    <div class="option">
+        <h3 class="option-title">Opção 2: Duas Colunas</h3>
+        <div class="op2-container">
+            <div class="op2-header">
+                <h2>O Que Você Recebe no Programa</h2>
+            </div>
+            <div class="op2-grid">
+                <div class="op2-column">
+                    <h4 class="op2-column-title">Programa Principal</h4>
+                    <div class="op2-item">
+                        <span class="op2-icon">📍</span>
+                        <div class="op2-text">
+                            <h4>Formação Presencial de 2 Dias</h4>
+                            <p>Janeiro 2026, São Paulo</p>
+                        </div>
+                    </div>
+                    <div class="op2-item">
+                        <span class="op2-icon">👥</span>
+                        <div class="op2-text">
+                            <h4>6 Consultorias Quinzenais</h4>
+                            <p>90 dias de acompanhamento</p>
+                        </div>
+                    </div>
+                    <div class="op2-item">
+                        <span class="op2-icon">📊</span>
+                        <div class="op2-text">
+                            <h4>Plataforma Brave Completa</h4>
+                            <p>Monitoramento 24/7</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="op2-column">
+                    <h4 class="op2-column-title">Entregáveis</h4>
+                    <div class="op2-item">
+                        <span class="op2-icon">🎯</span>
+                        <div class="op2-text">
+                            <h4>Diagnóstico Brave™ Triplo</h4>
+                            <p>Finanças + Operação + Estratégia</p>
+                        </div>
+                    </div>
+                    <div class="op2-item">
+                        <span class="op2-icon">📋</span>
+                        <div class="op2-text">
+                            <h4>Plano de 90 Dias</h4>
+                            <p>Personalizado para sua empresa</p>
+                        </div>
+                    </div>
+                    <div class="op2-item">
+                        <span class="op2-icon">🎁</span>
+                        <div class="op2-text">
+                            <h4>Bônus: Vaga para Sócio</h4>
+                            <p>Valor R$ 4.500 incluso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="op2-cta">
+                <a href="#" class="op2-button">Quero Ser Analisado →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 3 -->
+    <div class="option">
+        <h3 class="option-title">Opção 3: Bento Grid</h3>
+        <div class="op3-container">
+            <div class="op3-header">
+                <h2>O Que Você Recebe</h2>
+            </div>
+            <div class="op3-bento">
+                <div class="op3-card featured">
+                    <h4>Formação Presencial de 2 Dias</h4>
+                    <p>Janeiro 2026, São Paulo — Turma limitada a 30 empresários</p>
+                </div>
+                <div class="op3-card">
+                    <div class="number">6</div>
+                    <h4>Consultorias</h4>
+                    <p>Quinzenais por 90 dias</p>
+                </div>
+                <div class="op3-card">
+                    <div class="number">24/7</div>
+                    <h4>Plataforma</h4>
+                    <p>Monitoramento + Materiais</p>
+                </div>
+                <div class="op3-card">
+                    <div class="number">3</div>
+                    <h4>Diagnósticos</h4>
+                    <p>Finanças + Operação + Estratégia</p>
+                </div>
+                <div class="op3-card featured">
+                    <h4>+ Bônus Turma Fundadora</h4>
+                    <p>Sessão Pré-Evento (R$ 1.500) + Vaga para Sócio (R$ 4.500)</p>
+                </div>
+                <div class="op3-card cta-card">
+                    <a href="#" class="op3-button">Quero Ser Analisado →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 4 -->
+    <div class="option">
+        <h3 class="option-title">Opção 4: Timeline Vertical</h3>
+        <div class="op4-container">
+            <div class="op4-header">
+                <h2>O Que Você Recebe</h2>
+            </div>
+            <div class="op4-timeline">
+                <div class="op4-item">
+                    <h4>Formação Presencial de 2 Dias</h4>
+                    <p>Janeiro 2026, São Paulo — Turma limitada a 30 empresários</p>
+                </div>
+                <div class="op4-item">
+                    <h4>6 Consultorias Quinzenais</h4>
+                    <p>Acompanhamento individual por 90 dias pós-evento</p>
+                </div>
+                <div class="op4-item">
+                    <h4>Plataforma Brave Completa</h4>
+                    <p>Monitoramento 24/7 da implementação + materiais</p>
+                </div>
+                <div class="op4-item">
+                    <h4>Diagnóstico Brave™ Triplo</h4>
+                    <p>Análise completa: Finanças + Operação + Estratégia</p>
+                </div>
+                <div class="op4-item">
+                    <h4>Plano de 90 Dias Personalizado</h4>
+                    <p>Construído durante a imersão, com prioridades claras</p>
+                </div>
+            </div>
+            <div class="op4-bonus">
+                <h4 class="op4-bonus-label">Bônus Turma Fundadora</h4>
+                <div class="op4-item" style="margin: 0; padding: 0; border: none;">
+                    <h4>Sessão Pré-Evento + Vaga para Sócio</h4>
+                    <p>Valor total: R$ 6.000 — Incluso para você</p>
+                </div>
+            </div>
+            <div class="op4-cta">
+                <a href="#" class="op4-button">Quero Ser Analisado →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 5 -->
+    <div class="option">
+        <h3 class="option-title">Opção 5: Cards Horizontais Numerados</h3>
+        <div class="op5-container">
+            <div class="op5-header">
+                <h2>O Que Você Recebe</h2>
+            </div>
+            <div class="op5-cards">
+                <div class="op5-card">
+                    <span class="op5-number">01</span>
+                    <div class="op5-content">
+                        <h4>Formação Presencial de 2 Dias</h4>
+                        <p>Janeiro 2026, São Paulo — Turma limitada a 30 empresários</p>
+                    </div>
+                </div>
+                <div class="op5-card">
+                    <span class="op5-number">02</span>
+                    <div class="op5-content">
+                        <h4>6 Consultorias Quinzenais</h4>
+                        <p>Acompanhamento individual por 90 dias pós-evento</p>
+                    </div>
+                </div>
+                <div class="op5-card">
+                    <span class="op5-number">03</span>
+                    <div class="op5-content">
+                        <h4>Plataforma Brave Completa</h4>
+                        <p>Monitoramento 24/7 da implementação + materiais</p>
+                    </div>
+                </div>
+                <div class="op5-card">
+                    <span class="op5-number">04</span>
+                    <div class="op5-content">
+                        <h4>Diagnóstico Brave™ Triplo</h4>
+                        <p>Análise completa: Finanças + Operação + Estratégia</p>
+                    </div>
+                </div>
+                <div class="op5-card">
+                    <span class="op5-number">05</span>
+                    <div class="op5-content">
+                        <h4>Plano de 90 Dias Personalizado</h4>
+                        <p>Construído durante a imersão, com prioridades claras</p>
+                    </div>
+                </div>
+            </div>
+            <div class="op5-divider">+ Bônus Turma Fundadora</div>
+            <div class="op5-cards">
+                <div class="op5-card">
+                    <span class="op5-number">+</span>
+                    <div class="op5-content">
+                        <h4>Sessão Estratégica Pré-Evento</h4>
+                        <p>1h de diagnóstico individual</p>
+                    </div>
+                    <span class="op5-value">R$ 1.500</span>
+                </div>
+                <div class="op5-card">
+                    <span class="op5-number">+</span>
+                    <div class="op5-content">
+                        <h4>Vaga para Sócio ou Diretor</h4>
+                        <p>Sem custo adicional</p>
+                    </div>
+                    <span class="op5-value">R$ 4.500</span>
+                </div>
+            </div>
+            <div class="op5-cta">
+                <a href="#" class="op5-button">Quero Ser Analisado →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 6 -->
+    <div class="option">
+        <h3 class="option-title">Opção 6: Checklist Minimalista</h3>
+        <div class="op6-container">
+            <div class="op6-header">
+                <h2>O Que Você Recebe</h2>
+                <p>Tudo incluso no Brave Executive Program</p>
+            </div>
+            <div class="op6-list">
+                <div class="op6-item">
+                    <span>✓</span>
+                    <p>Formação Presencial de 2 Dias em São Paulo</p>
+                </div>
+                <div class="op6-item">
+                    <span>✓</span>
+                    <p>6 Consultorias Quinzenais (90 dias)</p>
+                </div>
+                <div class="op6-item">
+                    <span>✓</span>
+                    <p>Plataforma Brave Completa 24/7</p>
+                </div>
+                <div class="op6-item">
+                    <span>✓</span>
+                    <p>Diagnóstico Brave™ Triplo</p>
+                </div>
+                <div class="op6-item">
+                    <span>✓</span>
+                    <p>Plano de 90 Dias Personalizado</p>
+                </div>
+            </div>
+            <div class="op6-bonus-section">
+                <h4 class="op6-bonus-title">Bônus Exclusivos Turma Fundadora</h4>
+                <div class="op6-bonus-items">
+                    <div class="op6-bonus-item">
+                        <h4>Sessão Pré-Evento</h4>
+                        <small>Valor: R$ 1.500</small>
+                    </div>
+                    <div class="op6-bonus-item">
+                        <h4>Vaga para Sócio</h4>
+                        <small>Valor: R$ 4.500</small>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="op6-button">Quero Ser Analisado →</a>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 7 -->
+    <div class="option">
+        <h3 class="option-title">Opção 7: Estilo Pricing Table</h3>
+        <div class="op7-container">
+            <div class="op7-card">
+                <div class="op7-header">
+                    <h2>Brave Executive Program</h2>
+                    <p>Turma Fundadora — Janeiro 2026</p>
+                </div>
+                <div class="op7-body">
+                    <ul class="op7-list">
+                        <li class="op7-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Formação Presencial de 2 Dias</p>
+                                <small>São Paulo — Máximo 30 empresários</small>
+                            </div>
+                        </li>
+                        <li class="op7-item">
+                            <span>✓</span>
+                            <div>
+                                <p>6 Consultorias Quinzenais</p>
+                                <small>90 dias de acompanhamento individual</small>
+                            </div>
+                        </li>
+                        <li class="op7-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Plataforma Brave Completa</p>
+                                <small>Monitoramento 24/7 + Materiais</small>
+                            </div>
+                        </li>
+                        <li class="op7-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Diagnóstico Brave™ Triplo</p>
+                                <small>Finanças + Operação + Estratégia</small>
+                            </div>
+                        </li>
+                        <li class="op7-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Plano de 90 Dias Personalizado</p>
+                                <small>Construído durante a imersão</small>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="op7-bonus">
+                        <span class="op7-bonus-label">Bônus Turma Fundadora</span>
+                        <div class="op7-bonus-items">
+                            <div class="op7-bonus-item">
+                                <p>Sessão Estratégica Pré-Evento</p>
+                                <span>R$ 1.500</span>
+                            </div>
+                            <div class="op7-bonus-item">
+                                <p>Vaga para Sócio ou Diretor</p>
+                                <span>R$ 4.500</span>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="op7-button">Quero Ser Analisado →</a>
+                    <p class="op7-note">Analisamos seu perfil em 48h. Zero compromisso.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 8 -->
+    <div class="option">
+        <h3 class="option-title">Opção 8: Grid com Ícones</h3>
+        <div class="op8-container">
+            <div class="op8-header">
+                <h2>O Que Você Recebe no Programa</h2>
+            </div>
+            <div class="op8-grid">
+                <div class="op8-item">
+                    <div class="op8-icon">📍</div>
+                    <h4>2 Dias Presenciais</h4>
+                    <p>Janeiro 2026, São Paulo</p>
+                </div>
+                <div class="op8-item">
+                    <div class="op8-icon">👥</div>
+                    <h4>6 Consultorias</h4>
+                    <p>Quinzenais por 90 dias</p>
+                </div>
+                <div class="op8-item">
+                    <div class="op8-icon">📊</div>
+                    <h4>Plataforma 24/7</h4>
+                    <p>Monitoramento completo</p>
+                </div>
+                <div class="op8-item">
+                    <div class="op8-icon">🎯</div>
+                    <h4>Diagnóstico Triplo</h4>
+                    <p>Finanças + Operação + Estratégia</p>
+                </div>
+                <div class="op8-item">
+                    <div class="op8-icon">📋</div>
+                    <h4>Plano 90 Dias</h4>
+                    <p>Personalizado para você</p>
+                </div>
+                <div class="op8-item">
+                    <div class="op8-icon">🛡️</div>
+                    <h4>Garantia Tripla</h4>
+                    <p>Zero risco</p>
+                </div>
+            </div>
+            <div class="op8-bonus-row">
+                <div class="op8-bonus-card">
+                    <span class="icon">🎁</span>
+                    <div>
+                        <h4>Sessão Pré-Evento</h4>
+                        <small>Valor: R$ 1.500</small>
+                    </div>
+                </div>
+                <div class="op8-bonus-card">
+                    <span class="icon">🎁</span>
+                    <div>
+                        <h4>Vaga para Sócio</h4>
+                        <small>Valor: R$ 4.500</small>
+                    </div>
+                </div>
+            </div>
+            <div class="op8-cta">
+                <a href="#" class="op8-button">Quero Ser Analisado →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 9 -->
+    <div class="option">
+        <h3 class="option-title">Opção 9: Accordion/Expandable</h3>
+        <div class="op9-container">
+            <div class="op9-header">
+                <h2>O Que Você Recebe</h2>
+            </div>
+            <div class="op9-list">
+                <div class="op9-item open">
+                    <div class="op9-item-header">
+                        <span class="op9-check">✓</span>
+                        <h4>Formação Presencial de 2 Dias</h4>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="op9-item-body">
+                        <p>Janeiro 2026, São Paulo. Turma limitada a 30 empresários. Você constrói seu plano com consultores, nos seus números reais.</p>
+                    </div>
+                </div>
+                <div class="op9-item">
+                    <div class="op9-item-header">
+                        <span class="op9-check">✓</span>
+                        <h4>6 Consultorias Quinzenais</h4>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="op9-item-body">
+                        <p>Acompanhamento individual por 90 dias pós-evento. Sessões de 1h com consultor dedicado.</p>
+                    </div>
+                </div>
+                <div class="op9-item">
+                    <div class="op9-item-header">
+                        <span class="op9-check">✓</span>
+                        <h4>Plataforma Brave Completa</h4>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="op9-item-body">
+                        <p>Monitoramento 24/7 da implementação + todos os materiais e ferramentas.</p>
+                    </div>
+                </div>
+                <div class="op9-item">
+                    <div class="op9-item-header">
+                        <span class="op9-check">✓</span>
+                        <h4>Diagnóstico Brave™ Triplo</h4>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="op9-item-body">
+                        <p>Análise completa das 3 dimensões: Finanças + Operação + Estratégia.</p>
+                    </div>
+                </div>
+                <div class="op9-item">
+                    <div class="op9-item-header">
+                        <span class="op9-check">✓</span>
+                        <h4>Plano de 90 Dias Personalizado</h4>
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="op9-item-body">
+                        <p>Construído durante a imersão, com prioridades claras e ações específicas para sua empresa.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="op9-bonus">
+                <h4 class="op9-bonus-title">Bônus Turma Fundadora</h4>
+                <div class="op9-bonus-items">
+                    <div class="op9-bonus-item">
+                        <span>✓</span>
+                        <p>Sessão Pré-Evento (R$ 1.500)</p>
+                    </div>
+                    <div class="op9-bonus-item">
+                        <span>✓</span>
+                        <p>Vaga para Sócio (R$ 4.500)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="op9-cta">
+                <a href="#" class="op9-button">Quero Ser Analisado →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- OPÇÃO 10 -->
+    <div class="option">
+        <h3 class="option-title">Opção 10: Split Layout (Lado a Lado)</h3>
+        <div class="op10-container">
+            <div class="op10-split">
+                <div class="op10-left">
+                    <h2>Brave Executive Program</h2>
+                    <p>Turma Fundadora — Janeiro 2026</p>
+                    <div class="op10-highlight">
+                        <span class="number">2</span>
+                        <span>Dias de Formação Presencial em SP</span>
+                    </div>
+                    <div class="op10-highlight">
+                        <span class="number">90</span>
+                        <span>Dias de Implementação Guiada</span>
+                    </div>
+                    <div class="op10-highlight">
+                        <span class="number">30</span>
+                        <span>Vagas Máximas por Turma</span>
+                    </div>
+                </div>
+                <div class="op10-right">
+                    <h4 class="op10-right-title">O Que Está Incluso</h4>
+                    <div class="op10-list">
+                        <div class="op10-item">
+                            <span>✓</span>
+                            <div>
+                                <p>6 Consultorias Quinzenais</p>
+                                <small>Acompanhamento individual</small>
+                            </div>
+                        </div>
+                        <div class="op10-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Plataforma Brave 24/7</p>
+                                <small>Monitoramento + Materiais</small>
+                            </div>
+                        </div>
+                        <div class="op10-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Diagnóstico Triplo</p>
+                                <small>Finanças + Operação + Estratégia</small>
+                            </div>
+                        </div>
+                        <div class="op10-item">
+                            <span>✓</span>
+                            <div>
+                                <p>Plano de 90 Dias</p>
+                                <small>+ Bônus: Sessão Pré-Evento + Vaga Sócio</small>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="op10-button">Quero Ser Analisado →</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle accordion items
+        document.querySelectorAll('.op9-item-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

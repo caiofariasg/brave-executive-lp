@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showcase - Layouts das Dobras</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --blue-primary: #2b2d42;
+            --blue-dark: #0f1c2f;
+            --yellow-primary: #eaca2d;
+            --text-on-dark: #FFFFFF;
+            --text-on-dark-muted: rgba(255, 255, 255, 0.85);
+            --bg-light: #edf2f4;
+            --text-secondary: #505168;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+        }
+
+        .showcase-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #0f1c2f 0%, #1a2744 100%);
+            border-bottom: 3px solid var(--yellow-primary);
+        }
+
+        .showcase-header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-header p {
+            opacity: 0.7;
+        }
+
+        .section-divider {
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            padding: 1.5rem 2rem;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .option-label {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem 2rem;
+            font-size: 0.9rem;
+            border-left: 4px solid var(--yellow-primary);
+        }
+
+        .option-label strong {
+            color: var(--yellow-primary);
+        }
+
+        /* ================================================
+           BÔNUS EXCLUSIVOS - OPÇÃO 1: Cards Side by Side
+        ================================================ */
+        .bonus-v1 {
+            background: var(--blue-dark);
+            padding: 4rem 2rem;
+        }
+
+        .bonus-v1 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .bonus-v1 .bonus-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .bonus-v1 .bonus-header h2 {
+            font-size: 1.5rem;
+            color: var(--yellow-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .bonus-v1 .bonus-header p {
+            color: var(--text-on-dark-muted);
+            font-size: 1rem;
+        }
+
+        .bonus-v1 .bonus-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .bonus-v1 .bonus-card {
+            background: rgba(234, 202, 45, 0.08);
+            border: 1px solid rgba(234, 202, 45, 0.2);
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+
+        .bonus-v1 .bonus-badge {
+            display: inline-block;
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .bonus-v1 .bonus-name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .bonus-v1 .bonus-desc {
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .bonus-v1 .bonus-valor {
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--yellow-primary);
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* ================================================
+           BÔNUS EXCLUSIVOS - OPÇÃO 2: Lista Vertical Premium
+        ================================================ */
+        .bonus-v2 {
+            background: linear-gradient(135deg, #0f1c2f 0%, #1a2744 100%);
+            padding: 4rem 2rem;
+        }
+
+        .bonus-v2 .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .bonus-v2 .bonus-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .bonus-v2 .bonus-header span {
+            display: inline-block;
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .bonus-v2 .bonus-header h2 {
+            font-size: 1.75rem;
+            color: #fff;
+        }
+
+        .bonus-v2 .bonus-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .bonus-v2 .bonus-icon {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--yellow-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .bonus-v2 .bonus-content h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .bonus-v2 .bonus-content p {
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .bonus-v2 .bonus-value {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--yellow-primary);
+        }
+
+        /* ================================================
+           BÔNUS EXCLUSIVOS - OPÇÃO 3: Bento Box Style
+        ================================================ */
+        .bonus-v3 {
+            background: var(--blue-dark);
+            padding: 4rem 2rem;
+        }
+
+        .bonus-v3 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .bonus-v3 .bento-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto;
+            gap: 1rem;
+        }
+
+        .bonus-v3 .bento-header {
+            grid-column: 1 / -1;
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            padding: 1.5rem 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .bonus-v3 .bento-header h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .bonus-v3 .bento-header p {
+            font-size: 0.85rem;
+            margin-top: 0.25rem;
+            opacity: 0.8;
+        }
+
+        .bonus-v3 .bento-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bonus-v3 .bento-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--yellow-primary);
+            opacity: 0.3;
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .bonus-v3 .bento-card h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.75rem;
+        }
+
+        .bonus-v3 .bento-card p {
+            font-size: 0.875rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .bonus-v3 .bento-card .value {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--yellow-primary);
+        }
+
+        /* ================================================
+           BÔNUS EXCLUSIVOS - OPÇÃO 4: Timeline Style
+        ================================================ */
+        .bonus-v4 {
+            background: linear-gradient(180deg, #0f1c2f 0%, #1a2744 100%);
+            padding: 4rem 2rem;
+        }
+
+        .bonus-v4 .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .bonus-v4 .bonus-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .bonus-v4 .bonus-header h2 {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .bonus-v4 .bonus-header p {
+            color: var(--yellow-primary);
+            font-weight: 600;
+        }
+
+        .bonus-v4 .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .bonus-v4 .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--yellow-primary), transparent);
+        }
+
+        .bonus-v4 .timeline-item {
+            position: relative;
+            padding: 2rem;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bonus-v4 .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--yellow-primary);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+
+        .bonus-v4 .timeline-badge {
+            display: inline-block;
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.6rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .bonus-v4 .timeline-item h3 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .bonus-v4 .timeline-item p {
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+        }
+
+        .bonus-v4 .timeline-value {
+            display: inline-block;
+            margin-top: 1rem;
+            font-weight: 700;
+            color: var(--yellow-primary);
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 1: Grid Cards
+        ================================================ */
+        .falham-v1 {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v1 .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .falham-v1 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v1 .section-header h2 {
+            font-size: 2rem;
+            color: var(--blue-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .falham-v1 .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .falham-v1 .falham-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .falham-v1 .falham-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .falham-v1 .falham-stat {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e63946;
+            margin-bottom: 0.5rem;
+        }
+
+        .falham-v1 .falham-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--blue-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .falham-v1 .falham-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 2: Comparison Table
+        ================================================ */
+        .falham-v2 {
+            background: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .falham-v2 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .falham-v2 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v2 .section-header h2 {
+            font-size: 2rem;
+            color: var(--blue-primary);
+        }
+
+        .falham-v2 table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .falham-v2 th {
+            background: var(--blue-primary);
+            color: #fff;
+            padding: 1rem;
+            text-align: left;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .falham-v2 td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .falham-v2 tr:last-child {
+            background: rgba(234, 202, 45, 0.1);
+        }
+
+        .falham-v2 tr:last-child td {
+            color: var(--blue-primary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--yellow-primary);
+        }
+
+        .falham-v2 .stat-red {
+            color: #e63946;
+            font-weight: 700;
+        }
+
+        .falham-v2 .stat-green {
+            color: #2a9d8f;
+            font-weight: 700;
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 3: VS Layout
+        ================================================ */
+        .falham-v3 {
+            background: var(--blue-dark);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v3 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .falham-v3 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v3 .section-header h2 {
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .falham-v3 .vs-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .falham-v3 .vs-side {
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .falham-v3 .vs-wrong {
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+        }
+
+        .falham-v3 .vs-right {
+            background: rgba(234, 202, 45, 0.1);
+            border: 1px solid rgba(234, 202, 45, 0.3);
+        }
+
+        .falham-v3 .vs-title {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .falham-v3 .vs-wrong .vs-title {
+            color: #e63946;
+        }
+
+        .falham-v3 .vs-right .vs-title {
+            color: var(--yellow-primary);
+        }
+
+        .falham-v3 .vs-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+        }
+
+        .falham-v3 .vs-item span {
+            flex-shrink: 0;
+            font-size: 1.25rem;
+        }
+
+        .falham-v3 .vs-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+            color: rgba(255,255,255,0.2);
+            padding-top: 4rem;
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 4: Minimal List
+        ================================================ */
+        .falham-v4 {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v4 .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .falham-v4 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v4 .section-header span {
+            display: inline-block;
+            background: #e63946;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .falham-v4 .section-header h2 {
+            font-size: 1.75rem;
+            color: var(--blue-primary);
+        }
+
+        .falham-v4 .fail-list {
+            list-style: none;
+        }
+
+        .falham-v4 .fail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 0.5rem;
+            margin-bottom: 0.75rem;
+            border-left: 4px solid #e63946;
+        }
+
+        .falham-v4 .fail-stat {
+            flex-shrink: 0;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #e63946;
+            min-width: 80px;
+        }
+
+        .falham-v4 .fail-content h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .falham-v4 .fail-content p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .bonus-v1 .bonus-grid,
+            .bonus-v3 .bento-grid,
+            .falham-v1 .falham-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .falham-v3 .vs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .falham-v3 .vs-center {
+                display: none;
+            }
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 5: Cards Alerta
+        ================================================ */
+        .falham-v5 {
+            background: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .falham-v5 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .falham-v5 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v5 .alert-badge {
+            display: inline-block;
+            background: #e63946;
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 2rem;
+        }
+
+        .falham-v5 .section-header h2 {
+            font-size: 1.75rem;
+            color: var(--blue-primary);
+        }
+
+        .falham-grid-v5 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .falham-card-v5 {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 0.5rem;
+        }
+
+        .falham-card-v5 .card-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .falham-card-v5 h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .falham-card-v5 p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 6: Stats Dark
+        ================================================ */
+        .falham-v6 {
+            background: linear-gradient(135deg, #0f1c2f 0%, #1a2744 100%);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v6 .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .falham-v6 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v6 .section-header h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .falham-v6 .section-header p {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-block {
+            text-align: center;
+            padding: 2rem 1rem;
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 0.5rem;
+        }
+
+        .stat-block .big-stat {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #e63946;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-block .stat-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #e63946;
+            margin-bottom: 0.75rem;
+        }
+
+        .stat-block p {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.4;
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 7: Bento Grid
+        ================================================ */
+        .falham-v7 {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v7 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .bento-grid-v7 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .bento-header-v7 {
+            grid-column: 1 / -1;
+            background: #e63946;
+            color: #fff;
+            padding: 1.5rem 2rem;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .bento-header-v7 span {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-header-v7 h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .bento-card-v7 {
+            background: #fff;
+            padding: 1.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid rgba(0,0,0,0.08);
+        }
+
+        .bento-card-v7.red {
+            border-left: 4px solid #e63946;
+        }
+
+        .bento-number-v7 {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            color: #e63946;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+
+        .bento-card-v7 h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--blue-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .bento-card-v7 p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ================================================
+           POR QUE OUTROS FALHAM - OPÇÃO 8: Timeline
+        ================================================ */
+        .falham-v8 {
+            background: var(--blue-dark);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v8 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .falham-v8 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v8 .section-header h2 {
+            font-size: 1.75rem;
+            color: #fff;
+        }
+
+        .timeline-horizontal {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-step {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(230, 57, 70, 0.1);
+            border: 1px solid rgba(230, 57, 70, 0.3);
+            border-radius: 0.5rem;
+            flex: 1;
+            max-width: 180px;
+        }
+
+        .timeline-step .step-number {
+            width: 32px;
+            height: 32px;
+            background: #e63946;
+            color: #fff;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.75rem;
+        }
+
+        .timeline-step h3 {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-step p {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.6);
+        }
+
+        .timeline-arrow {
+            font-size: 1.5rem;
+            color: #e63946;
+            font-weight: 700;
+        }
+
+        .break-cycle {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .break-cycle span {
+            display: inline-block;
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.75rem 2rem;
+            border-radius: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .falham-grid-v5,
+            .stats-row,
+            .bento-grid-v7 {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-horizontal {
+                flex-direction: column;
+            }
+
+            .timeline-arrow {
+                transform: rotate(90deg);
+            }
+
+            .timeline-step {
+                max-width: 100%;
+            }
+        }
+
+        /* ================================================
+           NOVAS OPÇÕES - ESTILO BRAVE (SEM VERMELHO)
+        ================================================ */
+
+        /* Labels Brave */
+        .label-brave {
+            display: inline-block;
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+
+        /* ===== OPÇÃO 9: Accordion ===== */
+        .falham-v9 {
+            background: var(--bg-light);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v9 .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .falham-v9 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v9 .section-header h2 {
+            font-size: 1.75rem;
+            color: var(--blue-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .falham-v9 .section-header p {
+            color: var(--text-secondary);
+        }
+
+        .falham-accordion {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .accordion-item {
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.08);
+            border-radius: 0.5rem;
+            padding: 1.25rem 1.5rem;
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .accordion-icon {
+            flex-shrink: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--yellow-primary);
+            background: var(--blue-primary);
+            padding: 0.35rem 0.6rem;
+            border-radius: 0.25rem;
+        }
+
+        .accordion-text h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--blue-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .accordion-text p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* ===== OPÇÃO 10: Quote + Lista ===== */
+        .falham-v10 {
+            background: var(--blue-dark);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v10 .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quote-block {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .quote-block blockquote {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #fff;
+            font-style: italic;
+        }
+
+        .reason-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .reason-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            background: rgba(255,255,255,0.03);
+            border-left: 3px solid var(--yellow-primary);
+            border-radius: 0 0.5rem 0.5rem 0;
+        }
+
+        .reason-num {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--yellow-primary);
+        }
+
+        .reason-item div {
+            font-size: 0.9rem;
+            color: var(--text-on-dark-muted);
+        }
+
+        .reason-item strong {
+            color: #fff;
+        }
+
+        /* ===== OPÇÃO 11: Minimal ===== */
+        .falham-v11 {
+            background: #fff;
+            padding: 4rem 2rem;
+        }
+
+        .falham-v11 .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .minimal-content {
+            text-align: center;
+        }
+
+        .minimal-label {
+            display: inline-block;
+            background: var(--yellow-primary);
+            color: var(--blue-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.4rem 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .minimal-content h2 {
+            font-size: 1.75rem;
+            color: var(--blue-primary);
+            margin-bottom: 2rem;
+        }
+
+        .minimal-list {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .minimal-list p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .minimal-list p:last-child {
+            border-bottom: none;
+        }
+
+        .minimal-list strong {
+            color: var(--blue-primary);
+        }
+
+        .minimal-footer {
+            padding: 1.5rem;
+            background: var(--blue-primary);
+            border-radius: 0.5rem;
+        }
+
+        .minimal-footer p {
+            font-size: 1rem;
+            color: #fff;
+            margin: 0;
+        }
+
+        .minimal-footer strong {
+            color: var(--yellow-primary);
+        }
+
+        /* ===== OPÇÃO 12: Two Blocks ===== */
+        .falham-v12 {
+            background: linear-gradient(135deg, #0f1c2f 0%, #1a2744 100%);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v12 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .two-blocks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .block-left, .block-right {
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+
+        .block-left {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .block-right {
+            background: rgba(234, 202, 45, 0.1);
+            border: 1px solid rgba(234, 202, 45, 0.3);
+        }
+
+        .block-label {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1.5rem;
+        }
+
+        .block-left .block-label {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .block-right .block-label {
+            color: var(--yellow-primary);
+        }
+
+        .block-left ul, .block-right ul {
+            list-style: none;
+        }
+
+        .block-left li, .block-right li {
+            font-size: 0.9rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .block-left li:last-child, .block-right li:last-child {
+            border-bottom: none;
+        }
+
+        .block-left li {
+            color: var(--text-on-dark-muted);
+        }
+
+        .block-right li {
+            color: #fff;
+        }
+
+        /* ===== OPÇÃO 13: Horizontal Cards ===== */
+        .falham-v13 {
+            background: var(--blue-primary);
+            padding: 4rem 2rem;
+        }
+
+        .falham-v13 .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .falham-v13 .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .falham-v13 .section-header h2 {
+            font-size: 1.75rem;
+            color: #fff;
+        }
+
+        .horizontal-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .h-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            padding: 1.75rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 0.5rem;
+        }
+
+        .h-num {
+            flex-shrink: 0;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--blue-dark);
+            background: var(--yellow-primary);
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.25rem;
+        }
+
+        .h-content h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .h-content p {
+            font-size: 0.875rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.5;
+        }
+
+        @media (max-width: 768px) {
+            .two-blocks {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="showcase-header">
+        <h1>Showcase - Layouts das Dobras</h1>
+        <p>Escolha o layout que preferir para cada seção</p>
+    </div>
+
+    <!-- ============================================
+         BÔNUS EXCLUSIVOS
+    ============================================ -->
+
+    <div class="section-divider">Bônus Exclusivos - 4 Opções</div>
+
+    <!-- OPÇÃO 1 -->
+    <div class="option-label"><strong>Opção 1:</strong> Cards Side by Side (atual, melhorado)</div>
+    <section class="bonus-v1">
+        <div class="container">
+            <div class="bonus-header">
+                <h2>Bônus Exclusivos para Esta Turma</h2>
+                <p>Disponíveis apenas para a Turma Fundadora de Janeiro 2026</p>
+            </div>
+            <div class="bonus-grid">
+                <div class="bonus-card">
+                    <span class="bonus-badge">Bônus 1</span>
+                    <h3 class="bonus-name">Sessão Estratégica Pré-Evento</h3>
+                    <p class="bonus-desc">1 hora de diagnóstico individual com um consultor Brave antes do evento. Você chega sabendo exatamente onde estão os maiores vazamentos e gargalos.</p>
+                    <span class="bonus-valor">Valor: R$ 1.500</span>
+                </div>
+                <div class="bonus-card">
+                    <span class="bonus-badge">Bônus 2</span>
+                    <h3 class="bonus-name">Vaga para Convidado</h3>
+                    <p class="bonus-desc">Traga seu sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação.</p>
+                    <span class="bonus-valor">Valor: R$ 4.500</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 2 -->
+    <div class="option-label"><strong>Opção 2:</strong> Lista Vertical com Ícones</div>
+    <section class="bonus-v2">
+        <div class="container">
+            <div class="bonus-header">
+                <span>Exclusivo Turma Fundadora</span>
+                <h2>Bônus que não serão oferecidos nas próximas turmas</h2>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">📋</div>
+                <div class="bonus-content">
+                    <h3>Sessão Estratégica Pré-Evento</h3>
+                    <p>1 hora de diagnóstico individual com um consultor Brave antes do evento. Você chega sabendo exatamente onde estão os maiores vazamentos e gargalos da sua empresa.</p>
+                    <span class="bonus-value">Valor: R$ 1.500</span>
+                </div>
+            </div>
+            <div class="bonus-item">
+                <div class="bonus-icon">👥</div>
+                <div class="bonus-content">
+                    <h3>Vaga para Convidado</h3>
+                    <p>Traga seu sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação. Vocês constroem juntos, implementam juntos.</p>
+                    <span class="bonus-value">Valor: R$ 4.500</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 3 -->
+    <div class="option-label"><strong>Opção 3:</strong> Bento Box Style</div>
+    <section class="bonus-v3">
+        <div class="container">
+            <div class="bento-grid">
+                <div class="bento-header">
+                    <h2>Bônus Exclusivos para a Turma Fundadora</h2>
+                    <p>Não serão oferecidos nas próximas turmas</p>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-number">01</span>
+                    <h3>Sessão Estratégica Pré-Evento</h3>
+                    <p>1 hora de diagnóstico individual com um consultor Brave antes do evento. Você chega sabendo exatamente onde estão os maiores vazamentos.</p>
+                    <div class="value">R$ 1.500</div>
+                </div>
+                <div class="bento-card">
+                    <span class="bento-number">02</span>
+                    <h3>Vaga para Convidado</h3>
+                    <p>Traga seu sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação.</p>
+                    <div class="value">R$ 4.500</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 4 -->
+    <div class="option-label"><strong>Opção 4:</strong> Timeline Style</div>
+    <section class="bonus-v4">
+        <div class="container">
+            <div class="bonus-header">
+                <h2>Bônus Exclusivos para Esta Turma</h2>
+                <p>Valor total: R$ 6.000 em benefícios</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-badge">Antes do Evento</span>
+                    <h3>Sessão Estratégica Pré-Evento</h3>
+                    <p>1 hora de diagnóstico individual com um consultor Brave. Você chega sabendo exatamente onde estão os maiores vazamentos e gargalos da sua empresa.</p>
+                    <span class="timeline-value">Valor: R$ 1.500</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-badge">Durante o Evento</span>
+                    <h3>Vaga para Convidado</h3>
+                    <p>Traga seu sócio ou diretor sem custo adicional. Alinhamento da liderança desde o dia 1 acelera 3x a implementação. Vocês constroem juntos, implementam juntos.</p>
+                    <span class="timeline-value">Valor: R$ 4.500</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         POR QUE OUTROS FALHAM
+    ============================================ -->
+
+    <div class="section-divider">Por Que Outros Falham - 4 Opções</div>
+
+    <!-- OPÇÃO 1 -->
+    <div class="option-label"><strong>Opção 1:</strong> Grid de Cards com Stats (atual)</div>
+    <section class="falham-v1">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que outros métodos falham</h2>
+                <p>A maioria dos empresários já tentou de tudo. Consultorias genéricas, cursos online, mentorias em grupo.</p>
+            </div>
+            <div class="falham-grid">
+                <div class="falham-card">
+                    <span class="falham-stat">85%</span>
+                    <h3 class="falham-title">Ficam sem ação</h3>
+                    <p>Muita teoria, pouca implementação prática. Você sai cheio de ideias mas sem saber por onde começar.</p>
+                </div>
+                <div class="falham-card">
+                    <span class="falham-stat">R$ 80K+</span>
+                    <h3 class="falham-title">Consultorias genéricas</h3>
+                    <p>Pagam caro por diagnósticos complexos que não consideram a realidade da PME brasileira.</p>
+                </div>
+                <div class="falham-card">
+                    <span class="falham-stat">95%</span>
+                    <h3 class="falham-title">Não terminam</h3>
+                    <p>Cursos online têm taxa de conclusão de 5%. Sem acompanhamento, ninguém implementa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 2 -->
+    <div class="option-label"><strong>Opção 2:</strong> Tabela Comparativa</div>
+    <section class="falham-v2">
+        <div class="container">
+            <div class="section-header">
+                <h2>Por que métodos tradicionais falham?</h2>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Alternativa</th>
+                        <th>O que acontece</th>
+                        <th>Resultado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Eventos Motivacionais</strong></td>
+                        <td>Você sai inspirado, mas volta sozinho para o mesmo caos</td>
+                        <td class="stat-red">Zero implementação</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Cursos Online</strong></td>
+                        <td>95% não terminam. Assistir aula não muda processo</td>
+                        <td class="stat-red">Conhecimento sem ação</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consultoria Tradicional</strong></td>
+                        <td>Cara (R$ 60-120k) e lenta (6-12 meses). Muita teoria</td>
+                        <td class="stat-red">Demora no ROI</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Brave Executive</strong></td>
+                        <td>Imersão Presencial + 90 dias de acompanhamento</td>
+                        <td class="stat-green">Construção Real</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 3 -->
+    <div class="option-label"><strong>Opção 3:</strong> VS Layout (Errado x Certo)</div>
+    <section class="falham-v3">
+        <div class="container">
+            <div class="section-header">
+                <h2>O que não funciona vs. O que funciona</h2>
+            </div>
+            <div class="vs-grid">
+                <div class="vs-side vs-wrong">
+                    <div class="vs-title">O que não funciona</div>
+                    <div class="vs-item">
+                        <span>❌</span>
+                        <div><strong>Eventos motivacionais</strong> — Você sai inspirado mas volta pro mesmo caos</div>
+                    </div>
+                    <div class="vs-item">
+                        <span>❌</span>
+                        <div><strong>Cursos online</strong> — 95% não terminam. Sem acompanhamento</div>
+                    </div>
+                    <div class="vs-item">
+                        <span>❌</span>
+                        <div><strong>Consultorias genéricas</strong> — R$ 80k+ por diagnósticos que não aplicam</div>
+                    </div>
+                    <div class="vs-item">
+                        <span>❌</span>
+                        <div><strong>Mentorias em grupo</strong> — 300+ pessoas, zero atenção individual</div>
+                    </div>
+                </div>
+                <div class="vs-center">VS</div>
+                <div class="vs-side vs-right">
+                    <div class="vs-title">O que funciona</div>
+                    <div class="vs-item">
+                        <span>✓</span>
+                        <div><strong>Turma pequena</strong> — Máximo 30 empresários com atenção real</div>
+                    </div>
+                    <div class="vs-item">
+                        <span>✓</span>
+                        <div><strong>Construção prática</strong> — Você sai com o plano construído, não com teoria</div>
+                    </div>
+                    <div class="vs-item">
+                        <span>✓</span>
+                        <div><strong>90 dias guiados</strong> — 6 consultorias para garantir implementação</div>
+                    </div>
+                    <div class="vs-item">
+                        <span>✓</span>
+                        <div><strong>Método validado</strong> — 5.000+ empresas já transformadas</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 4 -->
+    <div class="option-label"><strong>Opção 4:</strong> Lista Minimalista</div>
+    <section class="falham-v4">
+        <div class="container">
+            <div class="section-header">
+                <span>A verdade incômoda</span>
+                <h2>Por que outros métodos falham</h2>
+            </div>
+            <ul class="fail-list">
+                <li class="fail-item">
+                    <span class="fail-stat">85%</span>
+                    <div class="fail-content">
+                        <h3>Ficam sem ação</h3>
+                        <p>Muita teoria, pouca implementação. Você sai cheio de ideias mas sem saber por onde começar.</p>
+                    </div>
+                </li>
+                <li class="fail-item">
+                    <span class="fail-stat">R$ 80k+</span>
+                    <div class="fail-content">
+                        <h3>Consultorias genéricas</h3>
+                        <p>Pagam caro por diagnósticos complexos que ignoram a realidade da PME brasileira.</p>
+                    </div>
+                </li>
+                <li class="fail-item">
+                    <span class="fail-stat">95%</span>
+                    <div class="fail-content">
+                        <h3>Não terminam</h3>
+                        <p>Cursos online têm taxa de conclusão de 5%. Sem acompanhamento, ninguém implementa.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         POR QUE OUTROS FALHAM - MAIS OPÇÕES
+    ============================================ -->
+
+    <!-- OPÇÃO 5 -->
+    <div class="option-label"><strong>Opção 5:</strong> Cards com Ícones de Alerta</div>
+    <section class="falham-v5">
+        <div class="container">
+            <div class="section-header">
+                <span class="alert-badge">Atenção</span>
+                <h2>Por que a maioria dos empresários continua travada</h2>
+            </div>
+            <div class="falham-grid-v5">
+                <div class="falham-card-v5">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-content">
+                        <h3>Eventos Motivacionais</h3>
+                        <p>Você sai inspirado, mas volta sozinho para o mesmo caos. Zero implementação.</p>
+                    </div>
+                </div>
+                <div class="falham-card-v5">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-content">
+                        <h3>Cursos Online</h3>
+                        <p>95% não terminam. Sem acompanhamento, assistir aula não muda processo.</p>
+                    </div>
+                </div>
+                <div class="falham-card-v5">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-content">
+                        <h3>Consultorias Genéricas</h3>
+                        <p>R$ 80k+ por diagnósticos complexos que ignoram a realidade da PME brasileira.</p>
+                    </div>
+                </div>
+                <div class="falham-card-v5">
+                    <div class="card-icon">⚠️</div>
+                    <div class="card-content">
+                        <h3>Mentorias em Grupo</h3>
+                        <p>300+ pessoas na mesma sala. Impossível ter atenção individual.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 6 -->
+    <div class="option-label"><strong>Opção 6:</strong> Estatísticas Grandes + Fundo Escuro</div>
+    <section class="falham-v6">
+        <div class="container">
+            <div class="section-header">
+                <h2>A verdade que ninguém conta</h2>
+                <p>Por que outros métodos não funcionam para PMEs</p>
+            </div>
+            <div class="stats-row">
+                <div class="stat-block">
+                    <span class="big-stat">85%</span>
+                    <span class="stat-label">ficam sem ação</span>
+                    <p>Muita teoria, zero implementação prática</p>
+                </div>
+                <div class="stat-block">
+                    <span class="big-stat">95%</span>
+                    <span class="stat-label">não terminam</span>
+                    <p>Cursos online sem acompanhamento</p>
+                </div>
+                <div class="stat-block">
+                    <span class="big-stat">R$80k+</span>
+                    <span class="stat-label">consultorias caras</span>
+                    <p>Diagnósticos que não aplicam na PME</p>
+                </div>
+                <div class="stat-block">
+                    <span class="big-stat">300+</span>
+                    <span class="stat-label">pessoas por turma</span>
+                    <p>Mentorias sem atenção individual</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 7 -->
+    <div class="option-label"><strong>Opção 7:</strong> Bento Grid (mesmo estilo dos Bônus)</div>
+    <section class="falham-v7">
+        <div class="container">
+            <div class="bento-grid-v7">
+                <div class="bento-header-v7">
+                    <span>A verdade incômoda</span>
+                    <h2>Por que outros métodos falham</h2>
+                </div>
+                <div class="bento-card-v7 red">
+                    <span class="bento-number-v7">85%</span>
+                    <h3>Ficam sem ação</h3>
+                    <p>Eventos motivacionais: você sai inspirado mas não sabe por onde começar</p>
+                </div>
+                <div class="bento-card-v7 red">
+                    <span class="bento-number-v7">95%</span>
+                    <h3>Não terminam</h3>
+                    <p>Cursos online sem accountability. Assistir aula não muda processo</p>
+                </div>
+                <div class="bento-card-v7 red">
+                    <span class="bento-number-v7">R$80k+</span>
+                    <h3>Consultorias genéricas</h3>
+                    <p>Pagam caro por diagnósticos que ignoram a realidade da PME brasileira</p>
+                </div>
+                <div class="bento-card-v7 red">
+                    <span class="bento-number-v7">300+</span>
+                    <h3>Turmas gigantes</h3>
+                    <p>Mentorias em grupo com centenas de pessoas. Zero atenção individual</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 8 -->
+    <div class="option-label"><strong>Opção 8:</strong> Antes x Depois (Timeline Horizontal)</div>
+    <section class="falham-v8">
+        <div class="container">
+            <div class="section-header">
+                <h2>O ciclo que você precisa quebrar</h2>
+            </div>
+            <div class="timeline-horizontal">
+                <div class="timeline-step wrong">
+                    <div class="step-number">1</div>
+                    <h3>Evento motivacional</h3>
+                    <p>Sai inspirado</p>
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-step wrong">
+                    <div class="step-number">2</div>
+                    <h3>Volta sozinho</h3>
+                    <p>Mesmo caos de sempre</p>
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-step wrong">
+                    <div class="step-number">3</div>
+                    <h3>Tenta sozinho</h3>
+                    <p>Sem método claro</p>
+                </div>
+                <div class="timeline-arrow">→</div>
+                <div class="timeline-step wrong">
+                    <div class="step-number">4</div>
+                    <h3>Desiste</h3>
+                    <p>Volta à estaca zero</p>
+                </div>
+            </div>
+            <div class="break-cycle">
+                <span>Quebre esse ciclo</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         POR QUE OUTROS FALHAM - NOVAS OPÇÕES (CORES BRAVE)
+    ============================================ -->
+
+    <div class="section-divider">Por Que Outros Falham - Novas Opções (Estilo Brave)</div>
+
+    <!-- OPÇÃO 9 -->
+    <div class="option-label"><strong>Opção 9:</strong> Accordion/Lista Simples (estilo FAQ)</div>
+    <section class="falham-v9">
+        <div class="container">
+            <div class="section-header">
+                <span class="label-brave">A verdade</span>
+                <h2>Por que outros métodos não funcionam</h2>
+                <p>A maioria dos empresários já tentou de tudo. Por que não deu certo?</p>
+            </div>
+            <div class="falham-accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">01</span>
+                        <div class="accordion-text">
+                            <h3>Eventos motivacionais</h3>
+                            <p>Você sai inspirado, mas volta sozinho para o mesmo caos. Sem método, sem acompanhamento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">02</span>
+                        <div class="accordion-text">
+                            <h3>Cursos online</h3>
+                            <p>95% não terminam. Assistir aula não muda processo. Falta implementação guiada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">03</span>
+                        <div class="accordion-text">
+                            <h3>Consultorias genéricas</h3>
+                            <p>R$ 80k+ por diagnósticos que não consideram a realidade da PME brasileira.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <span class="accordion-icon">04</span>
+                        <div class="accordion-text">
+                            <h3>Mentorias em grupo</h3>
+                            <p>300+ pessoas na mesma sala. Impossível ter atenção individual e plano personalizado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 10 -->
+    <div class="option-label"><strong>Opção 10:</strong> Quote/Citação Grande + Lista</div>
+    <section class="falham-v10">
+        <div class="container">
+            <div class="quote-block">
+                <blockquote>"Se funcionasse, você já teria resolvido"</blockquote>
+            </div>
+            <div class="reason-list">
+                <div class="reason-item">
+                    <span class="reason-num">01</span>
+                    <div>
+                        <strong>Eventos motivacionais</strong> — Você sai inspirado mas volta pro mesmo caos
+                    </div>
+                </div>
+                <div class="reason-item">
+                    <span class="reason-num">02</span>
+                    <div>
+                        <strong>Cursos online</strong> — 95% não terminam. Assistir aula não muda processo
+                    </div>
+                </div>
+                <div class="reason-item">
+                    <span class="reason-num">03</span>
+                    <div>
+                        <strong>Consultorias caras</strong> — R$ 80k+ por diagnósticos que não aplicam
+                    </div>
+                </div>
+                <div class="reason-item">
+                    <span class="reason-num">04</span>
+                    <div>
+                        <strong>Turmas gigantes</strong> — 300+ pessoas, zero atenção individual
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 11 -->
+    <div class="option-label"><strong>Opção 11:</strong> Minimal - Apenas Texto (estilo premium)</div>
+    <section class="falham-v11">
+        <div class="container">
+            <div class="minimal-content">
+                <span class="minimal-label">A verdade</span>
+                <h2>Por que outros métodos não funcionam</h2>
+                <div class="minimal-list">
+                    <p><strong>Eventos motivacionais:</strong> Você sai inspirado, mas volta sozinho para o mesmo caos.</p>
+                    <p><strong>Cursos online:</strong> 95% não terminam. Sem acompanhamento, ninguém implementa.</p>
+                    <p><strong>Consultorias genéricas:</strong> R$ 80k+ por diagnósticos que ignoram a PME brasileira.</p>
+                    <p><strong>Mentorias em grupo:</strong> 300+ pessoas. Impossível ter atenção individual.</p>
+                </div>
+                <div class="minimal-footer">
+                    <p>O problema não é falta de conhecimento. É falta de <strong>implementação guiada</strong>.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 12 -->
+    <div class="option-label"><strong>Opção 12:</strong> Dois Blocos (Problema → Solução)</div>
+    <section class="falham-v12">
+        <div class="container">
+            <div class="two-blocks">
+                <div class="block-left">
+                    <span class="block-label">O que não funciona</span>
+                    <ul>
+                        <li>Eventos motivacionais sem acompanhamento</li>
+                        <li>Cursos online que 95% não terminam</li>
+                        <li>Consultorias de R$ 80k+ para grandes empresas</li>
+                        <li>Mentorias com 300+ pessoas por turma</li>
+                    </ul>
+                </div>
+                <div class="block-right">
+                    <span class="block-label">O que funciona</span>
+                    <ul>
+                        <li>Turma pequena com máximo 30 empresários</li>
+                        <li>90 dias de acompanhamento individual</li>
+                        <li>Método validado em +5.000 PMEs brasileiras</li>
+                        <li>Construção prática, não teoria</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPÇÃO 13 -->
+    <div class="option-label"><strong>Opção 13:</strong> Cards Horizontais (estilo pilares)</div>
+    <section class="falham-v13">
+        <div class="container">
+            <div class="section-header">
+                <span class="label-brave">Entenda</span>
+                <h2>Por que outros métodos falham</h2>
+            </div>
+            <div class="horizontal-cards">
+                <div class="h-card">
+                    <span class="h-num">01</span>
+                    <div class="h-content">
+                        <h3>Eventos motivacionais</h3>
+                        <p>Você sai inspirado, mas volta sozinho para o mesmo caos. Zero implementação.</p>
+                    </div>
+                </div>
+                <div class="h-card">
+                    <span class="h-num">02</span>
+                    <div class="h-content">
+                        <h3>Cursos online</h3>
+                        <p>95% não terminam. Assistir aula não muda processo. Falta acompanhamento.</p>
+                    </div>
+                </div>
+                <div class="h-card">
+                    <span class="h-num">03</span>
+                    <div class="h-content">
+                        <h3>Consultorias genéricas</h3>
+                        <p>R$ 80k+ por diagnósticos que ignoram a realidade da PME brasileira.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="padding: 4rem 2rem; text-align: center; background: #0f1c2f;">
+        <p style="color: rgba(255,255,255,0.5);">Fim do Showcase</p>
+    </div>
+
+</body>
+</html>
