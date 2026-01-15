@@ -1086,6 +1086,90 @@
             }
         }
 
+        /* ===== TRIPLO PAPEL (CEO/CFO/COO) ===== */
+        .triplo-papel {
+            background: var(--blue-primary);
+            padding: var(--section-padding) 0;
+            color: var(--text-on-dark);
+        }
+
+        .triplo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .triplo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .triplo-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 0.5rem;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .triplo-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-4px);
+        }
+
+        .triplo-role {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            color: var(--blue-dark);
+            background: var(--accent-gold);
+            padding: 0.4rem 1rem;
+            border-radius: 0.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .triplo-titulo {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-on-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .triplo-desc {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            color: var(--text-on-dark-muted);
+            line-height: 1.6;
+        }
+
+        .triplo-footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 1.5rem 2rem;
+            background: rgba(234, 202, 45, 0.1);
+            border-radius: 0.5rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .triplo-footer p {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-on-dark);
+            margin: 0;
+        }
+
+        .triplo-footer strong {
+            color: var(--accent-gold);
+        }
+
         /* ===== POR QUE OUTROS FALHAM - ACCORDION STYLE ===== */
         .falham {
             background: var(--bg-light);
@@ -1817,7 +1901,7 @@
         <div class="hero-content">
             <span class="hero-label">Brave Executive Program</span>
             <h1 class="hero-title">Transforme Faturamento em <span>Caixa, Lucro e Capital de Giro</span></h1>
-            <p class="hero-subtitle">Formação executiva presencial. 2 dias de formação + 90 dias de implementação guiada com consultores especializados.</p>
+            <p class="hero-subtitle">Para donos de empresa que sabem que o próximo nível exige método, visão e decisão.</p>
             <a href="#aplicar" class="hero-cta">Solicitar Informações</a>
             <p class="hero-note">Turma Janeiro 2026 · São Paulo</p>
         </div>
@@ -1827,6 +1911,38 @@
             <div class="name-tag">
                 <strong>Leonardo Leão</strong>
                 <span>CEO Brave Educação</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRIPLO PAPEL: CEO + CFO + COO -->
+    <section class="triplo-papel">
+        <div class="container">
+            <header class="section-header animate-on-scroll">
+                <h2 class="section-title section-title--dark">Hoje, não dá mais para ser <span style="color: var(--accent-gold);">só CEO</span></h2>
+                <p class="section-subtitle" style="color: var(--text-on-dark-muted);">Você precisa dominar 3 papéis para crescer com controle</p>
+            </header>
+
+            <div class="triplo-grid">
+                <article class="triplo-card animate-on-scroll delay-1">
+                    <span class="triplo-role">CFO</span>
+                    <h3 class="triplo-titulo">Pensar como CFO</h3>
+                    <p class="triplo-desc">Dominar números, caixa, margem e indicadores</p>
+                </article>
+                <article class="triplo-card animate-on-scroll delay-2">
+                    <span class="triplo-role">COO</span>
+                    <h3 class="triplo-titulo">Agir como COO</h3>
+                    <p class="triplo-desc">Entender operação, processo e execução</p>
+                </article>
+                <article class="triplo-card animate-on-scroll delay-3">
+                    <span class="triplo-role">CEO</span>
+                    <h3 class="triplo-titulo">Continuar sendo CEO</h3>
+                    <p class="triplo-desc">Tomar decisões estratégicas com base em dados reais</p>
+                </article>
+            </div>
+
+            <div class="triplo-footer animate-on-scroll">
+                <p>É exatamente isso que a <strong>Brave Executive</strong> entrega.</p>
             </div>
         </div>
     </section>
