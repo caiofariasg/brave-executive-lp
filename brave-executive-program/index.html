@@ -153,16 +153,17 @@
             color: var(--text-on-dark);
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 5rem;
-            gap: 4rem;
+            justify-content: center;
+            padding: 3rem 2rem;
+            /* Reduzido de 5rem */
+            gap: 2rem;
+            /* Reduzido de 4rem */
             position: relative;
             overflow: hidden;
         }
 
         .hero-content {
-            flex: 1;
-            max-width: 550px;
+            flex: 0 1 550px;
             animation: fadeInUp 1s ease forwards;
         }
 
@@ -267,26 +268,149 @@
             letter-spacing: 0.1em;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1024px) {
             .hero {
                 flex-direction: column;
-                padding: 4rem 2rem;
+                align-items: center;
+                justify-content: center;
+                /* Mudado de flex-start para center */
+                min-height: auto;
+                padding: 3rem 1.5rem;
+                /* Ajustado padding mobile */
                 text-align: center;
+                gap: 2rem;
+                /* Aumentado um pouco para respiro no mobile, estava 10px */
             }
 
             .hero-content {
                 max-width: 100%;
+                flex: none;
+            }
+
+            .hero-label {
+                margin-bottom: 8px !important;
+            }
+
+            .hero-title {
+                margin-bottom: 8px !important;
+            }
+
+            .hero-subtitle {
+                margin-bottom: 12px !important;
+            }
+
+            .hero-note {
+                margin-top: 8px !important;
+                margin-bottom: 0 !important;
             }
 
             .hero-photo-card {
                 flex: none;
                 width: 100%;
-                max-width: 350px;
+                max-width: 300px;
+                margin: 0 !important;
             }
 
             .hero-photo-card img {
-                height: 400px;
+                height: 350px;
             }
+
+            .hero-photo-card .name-tag {
+                padding: 0.5rem 1rem;
+                bottom: -10px;
+            }
+
+            .logos-section {
+                display: none;
+            }
+        }
+
+        /* ===== LOGOS CAROUSEL (Opção B - Clean + Drag) ===== */
+        .logos-section {
+            background: linear-gradient(135deg, #0f1c2f 0%, #1a2744 100%);
+            padding: 2rem 0;
+            overflow: hidden;
+            cursor: grab;
+        }
+
+        .logos-section:active {
+            cursor: grabbing;
+        }
+
+        .logos-section.dragging .logos-track {
+            animation-play-state: paused;
+        }
+
+        .logos-track {
+            display: flex;
+            animation: scroll-logos 40s linear infinite;
+            width: calc(120px * 26);
+            user-select: none;
+        }
+
+        .logo-item {
+            flex: 0 0 120px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 1rem;
+            pointer-events: none;
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 30px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        @keyframes scroll-logos {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-120px * 13));
+            }
+        }
+
+        /* ===== CREDIBILIDADE (Stats - Opção B) ===== */
+        .credibilidade {
+            background: linear-gradient(135deg, #0f1c2f 0%, #1a2744 100%);
+            padding: 2.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .credibilidade-grid {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+        }
+
+        .cred-stat {
+            text-align: center;
+        }
+
+        .cred-number {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            display: block;
+            line-height: 1;
+        }
+
+        .cred-number span {
+            color: var(--accent-gold);
+        }
+
+        .cred-label {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 0.5rem;
         }
 
         /* ===== QUALIFICAÇÃO ===== */
@@ -1933,7 +2057,8 @@
         <div class="hero-content">
             <span class="hero-label">Brave Executive Program</span>
             <h1 class="hero-title">Enxergue seu negócio como um <span>gestor completo</span></h1>
-            <p class="hero-subtitle">Formação para donos que já construíram muito, mas sabem que o próximo nível exige método, visão e decisão.</p>
+            <p class="hero-subtitle">Formação para donos que já construíram muito, mas sabem que o próximo nível exige
+                método, visão e decisão.</p>
             <a href="#aplicar" class="hero-cta">Solicitar Informações</a>
             <p class="hero-note">Turma Janeiro 2026 · São Paulo</p>
         </div>
@@ -1943,6 +2068,75 @@
             <div class="name-tag">
                 <strong>Leonardo Leão</strong>
                 <span>CEO Brave Educação</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOGOS CAROUSEL (Opção B - Clean) -->
+    <section class="logos-section">
+        <div class="logos-track">
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/BK.png" alt="BK"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/centerbox-branco.png"
+                    alt="Centerbox"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/DOMINOS.png" alt="Dominos"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/GRUPO-MARQUISE-logo-branca.png"
+                    alt="Grupo Marquise"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/light-logo-branca.png" alt="Light">
+            </div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/Logo-M-Dias-Branco.png"
+                    alt="M Dias Branco"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/MANADA-ANIMAL.png"
+                    alt="Manada Animal"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/mercado-pago-logo-branca.png"
+                    alt="Mercado Pago"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/MMARTAN.png" alt="MMartan"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/PAGUE-MENOS-BRANCA.png"
+                    alt="Pague Menos"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/pao-de-acucar-logo-branca.png"
+                    alt="Pão de Açúcar"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/SPOLETO.png" alt="Spoleto"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/SUBWAY.png" alt="Subway"></div>
+            <!-- Duplicate for infinite scroll -->
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/BK.png" alt="BK"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/centerbox-branco.png"
+                    alt="Centerbox"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/DOMINOS.png" alt="Dominos"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/GRUPO-MARQUISE-logo-branca.png"
+                    alt="Grupo Marquise"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/light-logo-branca.png" alt="Light">
+            </div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/Logo-M-Dias-Branco.png"
+                    alt="M Dias Branco"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/MANADA-ANIMAL.png"
+                    alt="Manada Animal"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/mercado-pago-logo-branca.png"
+                    alt="Mercado Pago"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/MMARTAN.png" alt="MMartan"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/PAGUE-MENOS-BRANCA.png"
+                    alt="Pague Menos"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/pao-de-acucar-logo-branca.png"
+                    alt="Pão de Açúcar"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/SPOLETO.png" alt="Spoleto"></div>
+            <div class="logo-item"><img src="/brave-executive-program/assets/logos/SUBWAY.png" alt="Subway"></div>
+        </div>
+    </section>
+
+    <!-- CREDIBILIDADE (Stats) -->
+    <section class="credibilidade">
+        <div class="container">
+            <div class="credibilidade-grid">
+                <div class="cred-stat">
+                    <span class="cred-number">5.000<span>+</span></span>
+                    <div class="cred-label">empresas atendidas</div>
+                </div>
+                <div class="cred-stat">
+                    <span class="cred-number">R$ 8<span>bi</span></span>
+                    <div class="cred-label">em operações gerenciadas</div>
+                </div>
+                <div class="cred-stat">
+                    <span class="cred-number">40<span>+</span></span>
+                    <div class="cred-label">segmentos diferentes</div>
+                </div>
             </div>
         </div>
     </section>
@@ -2015,7 +2209,9 @@
             </div>
 
             <div class="qualificacao-footer animate-on-scroll">
-                <p class="qualificacao-footer-yes">Se você quer aprender com quem já esteve dentro de grandes operações, sentou na cadeira de gestor, e hoje aplica esse conhecimento para ajudar donos de empresa — <strong>faz sentido conversar.</strong></p>
+                <p class="qualificacao-footer-yes">Se você quer aprender com quem já esteve dentro de grandes operações,
+                    sentou na cadeira de gestor, e hoje aplica esse conhecimento para ajudar donos de empresa —
+                    <strong>faz sentido conversar.</strong></p>
             </div>
 
             <div class="animate-on-scroll" style="text-align: center; margin-top: 2.5rem;">
@@ -2030,7 +2226,8 @@
             <header class="section-header animate-on-scroll">
                 <span class="label-brave">A verdade</span>
                 <h2 class="section-title">Por que outros métodos não funcionam</h2>
-                <p class="section-subtitle">Porque nenhum deles te ensina a pensar como gestor. Só te ensinam a executar.</p>
+                <p class="section-subtitle">Porque nenhum deles te ensina a pensar como gestor. Só te ensinam a
+                    executar.</p>
             </header>
 
             <div class="falham-accordion animate-on-scroll">
@@ -2127,7 +2324,8 @@
             </div>
 
             <div class="pilares-footer animate-on-scroll">
-                <p class="pilares-footer-text">O mesmo método que aplicamos na consultoria — <strong>financeiro, operações, processos e decisão</strong> — o que funciona no mundo real.</p>
+                <p class="pilares-footer-text">O mesmo método que aplicamos na consultoria — <strong>financeiro,
+                        operações, processos e decisão</strong> — o que funciona no mundo real.</p>
             </div>
 
             <div class="animate-on-scroll" style="text-align: center; margin-top: 2.5rem;">
@@ -2159,7 +2357,9 @@
                     </p>
                     <p class="fundador-bio">
                         Criador do Método Brave, que combina diagnóstico financeiro, operacional e estratégico
-                        em um sistema único de implementação com acompanhamento real. Alguém que já esteve dentro de grandes operações, sentou na cadeira de gestor, e hoje aplica esse conhecimento para ajudar donos de empresa a terem resultado de verdade.
+                        em um sistema único de implementação com acompanhamento real. Alguém que já esteve dentro de
+                        grandes operações, sentou na cadeira de gestor, e hoje aplica esse conhecimento para ajudar
+                        donos de empresa a terem resultado de verdade.
                     </p>
                     <div class="fundador-stats">
                         <div class="fundador-stat-item">
@@ -2253,7 +2453,8 @@
             <header class="section-header animate-on-scroll">
                 <span class="section-label">Sua Jornada</span>
                 <h2 class="section-title">Não é para te ensinar a fazer tudo</h2>
-                <p class="section-subtitle">É para você enxergar o negócio como um gestor completo. Saber ler os dados certos, entender onde mexer na operação, e conduzir a empresa com segurança.</p>
+                <p class="section-subtitle">É para você enxergar o negócio como um gestor completo. Saber ler os dados
+                    certos, entender onde mexer na operação, e conduzir a empresa com segurança.</p>
             </header>
 
             <div class="jornada-grid">
@@ -2311,7 +2512,8 @@
             <div class="resumo-split animate-on-scroll">
                 <div class="resumo-left">
                     <h2>Em dois dias presenciais</h2>
-                    <p>A gente leva para a formação o mesmo método que aplicamos na consultoria — financeiro, operações, processos e decisão — o que funciona no mundo real.</p>
+                    <p>A gente leva para a formação o mesmo método que aplicamos na consultoria — financeiro, operações,
+                        processos e decisão — o que funciona no mundo real.</p>
 
                     <div class="resumo-highlight">
                         <div class="number">2</div>
@@ -2463,7 +2665,8 @@
                     <div class="garantia-item animate-on-scroll delay-2">
                         <span class="garantia-number">2</span>
                         <h3 class="garantia-title">Implementação (90 dias)</h3>
-                        <p class="garantia-text">Se você implementar e não enxergar o negócio com clareza de gestor: reembolso 100% + R$ 5.000 pelo seu tempo.</p>
+                        <p class="garantia-text">Se você implementar e não enxergar o negócio com clareza de gestor:
+                            reembolso 100% + R$ 5.000 pelo seu tempo.</p>
                     </div>
                     <div class="garantia-item animate-on-scroll delay-3">
                         <span class="garantia-number">3</span>
@@ -2606,7 +2809,9 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>O investimento é apresentado na conversa de alinhamento. Para referência: uma consultoria tradicional cobra R$80k+ por diagnóstico. Nossa formação entrega o mesmo método com acompanhamento por uma fração desse valor. Condições especiais para a Turma Fundadora.</p>
+                        <p>O investimento é apresentado na conversa de alinhamento. Para referência: uma consultoria
+                            tradicional cobra R$80k+ por diagnóstico. Nossa formação entrega o mesmo método com
+                            acompanhamento por uma fração desse valor. Condições especiais para a Turma Fundadora.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2635,7 +2840,9 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Já atendemos 40+ segmentos: varejo, atacado, clínicas, escritórios de advocacia, agências, construtoras, indústrias, restaurantes, academias, e-commerces, consultorias, transportadoras, entre outros. O método é universal, o plano é 100% personalizado.</p>
+                        <p>Já atendemos 40+ segmentos: varejo, atacado, clínicas, escritórios de advocacia, agências,
+                            construtoras, indústrias, restaurantes, academias, e-commerces, consultorias,
+                            transportadoras, entre outros. O método é universal, o plano é 100% personalizado.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2644,7 +2851,9 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Não. Na verdade, a maioria dos empresários chega sem estrutura clara — nem financeira, nem operacional. Parte do programa é justamente construir essa visão de gestor completo junto com você.</p>
+                        <p>Não. Na verdade, a maioria dos empresários chega sem estrutura clara — nem financeira, nem
+                            operacional. Parte do programa é justamente construir essa visão de gestor completo junto
+                            com você.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2653,7 +2862,9 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>São 6 sessões individuais online (1h cada), quinzenais, ao longo de 90 dias. Você tem um consultor dedicado que acompanha sua implementação, cobra entregas e ajusta o plano conforme a realidade do seu negócio.</p>
+                        <p>São 6 sessões individuais online (1h cada), quinzenais, ao longo de 90 dias. Você tem um
+                            consultor dedicado que acompanha sua implementação, cobra entregas e ajusta o plano conforme
+                            a realidade do seu negócio.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2662,7 +2873,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Se sua empresa não aguenta 2 dias sem você, esse é exatamente o problema que vamos resolver. A formação existe para você parar de ser o gargalo.</p>
+                        <p>Se sua empresa não aguenta 2 dias sem você, esse é exatamente o problema que vamos resolver.
+                            A formação existe para você parar de ser o gargalo.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2681,7 +2893,8 @@
                         <span class="faq-icon"></span>
                     </div>
                     <div class="faq-answer">
-                        <p>A formação é desenhada para empresas que faturam a partir de R$100k/mês. Abaixo disso, o método pode ser avançado demais para o momento da empresa.</p>
+                        <p>A formação é desenhada para empresas que faturam a partir de R$100k/mês. Abaixo disso, o
+                            método pode ser avançado demais para o momento da empresa.</p>
                     </div>
                 </div>
                 <div class="faq-item animate-on-scroll">
@@ -2796,6 +3009,68 @@
 
         // Auto-play carousel
         setInterval(() => goToSlide(currentSlide + 1), 5000);
+
+        // Logos carousel drag functionality
+        const logosSection = document.querySelector('.logos-section');
+        const logosTrack = document.querySelector('.logos-track');
+
+        if (logosSection && logosTrack) {
+            let isDragging = false;
+            let startX;
+            let scrollLeft;
+            let currentTransform = 0;
+
+            const getTransformX = () => {
+                const style = window.getComputedStyle(logosTrack);
+                const matrix = new DOMMatrixReadOnly(style.transform);
+                return matrix.m41;
+            };
+
+            logosSection.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                logosSection.classList.add('dragging');
+                startX = e.pageX;
+                currentTransform = getTransformX();
+            });
+
+            logosSection.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                const x = e.pageX;
+                const walk = (x - startX);
+                logosTrack.style.transform = `translateX(${currentTransform + walk}px)`;
+            });
+
+            logosSection.addEventListener('mouseup', () => {
+                isDragging = false;
+                logosSection.classList.remove('dragging');
+            });
+
+            logosSection.addEventListener('mouseleave', () => {
+                isDragging = false;
+                logosSection.classList.remove('dragging');
+            });
+
+            // Touch events for mobile
+            logosSection.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                logosSection.classList.add('dragging');
+                startX = e.touches[0].pageX;
+                currentTransform = getTransformX();
+            });
+
+            logosSection.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                const x = e.touches[0].pageX;
+                const walk = (x - startX);
+                logosTrack.style.transform = `translateX(${currentTransform + walk}px)`;
+            });
+
+            logosSection.addEventListener('touchend', () => {
+                isDragging = false;
+                logosSection.classList.remove('dragging');
+            });
+        }
     </script>
 
 </body>
