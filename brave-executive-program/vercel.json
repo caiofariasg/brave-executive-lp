@@ -1,0 +1,16 @@
+{
+    "cleanUrls": true,
+    "trailingSlash": false,
+    "redirects": [
+        {
+            "source": "/brave-executive-program",
+            "destination": "/",
+            "permanent": true
+        },
+        {
+            "source": "/brave-executive-program/:path*",
+            "destination": "/:path*",
+            "permanent": true
+        }
+    ]
+}
